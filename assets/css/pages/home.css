@@ -1,0 +1,956 @@
+/* ==========================================================================
+   Home — src/pages/Home.jsx (screen launcher)
+   ========================================================================== */
+
+.home {
+  background: var(--canvas);
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---- Hero ----------------------------------------------------------------- */
+/* Measured from a 1808 × 870 design: every size is N × --u, where --u is 1px at
+   1808px wide and scales with the viewport (capped so it doesn't grow forever). */
+
+.hero {
+  --u: min(calc(100vw / 1808), 1.1px);
+  --hero-font: "Google Sans Flex", var(--font-display);
+  --hero-ink: #050d45;
+  --hero-text: #50566f;
+  --hero-blue: #0062f6;
+  --hero-amber: #fcb70a;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(870 * var(--u));
+  background:
+    radial-gradient(calc(300 * var(--u)) calc(280 * var(--u)) at calc(110 * var(--u)) calc(330 * var(--u)), #fafafa 45%, rgba(250, 250, 250, 0) 100%),
+    radial-gradient(calc(400 * var(--u)) calc(150 * var(--u)) at calc(560 * var(--u)) 0, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 100%),
+    radial-gradient(calc(150 * var(--u)) calc(120 * var(--u)) at calc(900 * var(--u)) 0, #d0e8fe, rgba(208, 232, 254, 0) 100%),
+    linear-gradient(180deg, #dfeefe 0, #e6f2fd calc(40 * var(--u)), #e9f3fd calc(80 * var(--u)), #edf5fd calc(120 * var(--u)), #f4f7fb calc(200 * var(--u)), #f8f9fa calc(240 * var(--u)), #fafafa calc(290 * var(--u)));
+}
+
+/* Soft filled shapes along the left edge */
+.hero__blobs {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: calc(300 * var(--u));
+  height: calc(870 * var(--u));
+  filter: blur(calc(2.5 * var(--u)));
+}
+
+.hero__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Dotted world map with trade routes (lon -180° sits at x = 467) */
+.hero__map {
+  position: absolute;
+  z-index: 0;
+  left: calc(467 * var(--u));
+  top: calc(138 * var(--u));
+  width: calc(565 * var(--u));
+  aspect-ratio: 190 / 99;
+  /* fade toward the bottom and into the glass band on the right */
+  -webkit-mask-image:
+    linear-gradient(180deg, #000 62%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(90deg, #000 84%, rgba(0, 0, 0, 0.25) 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(180deg, #000 62%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(90deg, #000 84%, rgba(0, 0, 0, 0.25) 100%);
+  mask-composite: intersect;
+}
+
+.hero__map img,
+.hero__map svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__map img {
+  opacity: 1;
+}
+
+.hero-map__route {
+  fill: none;
+  stroke: #f5b72a;
+  stroke-width: 1.5;
+  stroke-dasharray: 2.4 1.6;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.hero-map__pin path {
+  fill: var(--hero-amber);
+  filter: drop-shadow(0 1.5px 2px rgba(176, 116, 0, 0.45));
+}
+
+.hero-map__pin circle {
+  fill: #fff;
+}
+
+.hero-map__sparkle {
+  fill: var(--hero-amber);
+}
+
+/* Photo panel: a blue glass band sits between the white content "bubble" and
+   the photo; both edges are clip paths traced from the design (#hero-glass,
+   #hero-wave in HomeHero.jsx). */
+.hero__media {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: calc(840 * var(--u));
+}
+
+.hero__glass,
+.hero__frame {
+  position: absolute;
+  inset: 0;
+}
+
+/* the glass box keeps the design's size so its curve never stretches */
+.hero__glass {
+  right: auto;
+  width: calc(968 * var(--u));
+}
+
+.hero__glass {
+  clip-path: url(#hero-glass);
+  background: linear-gradient(180deg,
+    #a6cffb 0%, #b6d7fb 4.6%, #c5dffc 10.3%, #d0e4fc 34.5%, #d3e6fc 51.7%, #b1d4fd 59.8%,
+    #9dc9fd 64.4%, #aed2fc 74.7%, #cae1fb 90.8%, #cfe5fd 95.4%, #e3eefc 100%);
+}
+
+/* Cover the panel, never distort: the crop keeps the flag in the upper part and
+   the farmer from head to waist beside the curve, as in the design. */
+/* Masked, not clipped: the curve is a fixed 968 × 870 (design units) layer so its
+   shape never stretches, and a solid layer shows the rest of the photo out to the
+   right edge on wide screens. */
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  -webkit-mask:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxwYXRoIGQ9Ik0wLjE1OTYgMEMwLjE3NjUgMC4wMjA4IDAuMTg0NyAwLjA0MTcgMC4xOTA3IDAuMDYyNUMwLjE5NjYgMC4wODMzIDAuMTk5OCAwLjEwNDIgMC4yMDE5IDAuMTI1QzAuMjAzOSAwLjE0NTggMC4yMDQ1IDAuMTY2NyAwLjIwMzUgMC4xODc1QzAuMjAyNSAwLjIwODMgMC4xOTk4IDAuMjI5MiAwLjE5NTIgMC4yNUMwLjE5MDUgMC4yNzA4IDAuMTg0IDAuMjkxNyAwLjE3NTggMC4zMTI1QzAuMTY3NiAwLjMzMzMgMC4xNTc3IDAuMzU0MiAwLjE0NyAwLjM3NUMwLjEzNjMgMC4zOTU4IDAuMTI0OCAwLjQxNjcgMC4xMTMzIDAuNDM3NUMwLjEwMTkgMC40NTgzIDAuMDkwNiAwLjQ3OTIgMC4wODAzIDAuNUMwLjA2OTkgMC41MjA4IDAuMDYwNiAwLjU0MTcgMC4wNTMgMC41NjI1QzAuMDQ1MyAwLjU4MzMgMC4wMzk0IDAuNjA0MiAwLjAzNTcgMC42MjVDMC4wMzIgMC42NDU4IDAuMDMwNSAwLjY2NjcgMC4wMzE5IDAuNjg3NUMwLjAzMzMgMC43MDgzIDAuMDM3NyAwLjcyOTIgMC4wNDU3IDAuNzVDMC4wNTM3IDAuNzcwOCAwLjA2NTUgMC43OTE3IDAuMDgxNyAwLjgxMjVDMC4wOTc4IDAuODMzMyAwLjExODUgMC44NTQyIDAuMTQzIDAuODc1QzAuMTY3NSAwLjg5NTggMC4xOTYgMC45MTY3IDAuMjI0MSAwLjkzNzVDMC4yNTIyIDAuOTU4MyAwLjI4MDMgMC45NzkyIDAuMjk1NSAxSDFWMHoiLz48L3N2Zz4K") 0 0 / calc(968 * var(--u)) 100% no-repeat,
+    linear-gradient(#000, #000) calc(967 * var(--u)) 0 / calc(100% - 967 * var(--u)) 100% no-repeat;
+  mask:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxwYXRoIGQ9Ik0wLjE1OTYgMEMwLjE3NjUgMC4wMjA4IDAuMTg0NyAwLjA0MTcgMC4xOTA3IDAuMDYyNUMwLjE5NjYgMC4wODMzIDAuMTk5OCAwLjEwNDIgMC4yMDE5IDAuMTI1QzAuMjAzOSAwLjE0NTggMC4yMDQ1IDAuMTY2NyAwLjIwMzUgMC4xODc1QzAuMjAyNSAwLjIwODMgMC4xOTk4IDAuMjI5MiAwLjE5NTIgMC4yNUMwLjE5MDUgMC4yNzA4IDAuMTg0IDAuMjkxNyAwLjE3NTggMC4zMTI1QzAuMTY3NiAwLjMzMzMgMC4xNTc3IDAuMzU0MiAwLjE0NyAwLjM3NUMwLjEzNjMgMC4zOTU4IDAuMTI0OCAwLjQxNjcgMC4xMTMzIDAuNDM3NUMwLjEwMTkgMC40NTgzIDAuMDkwNiAwLjQ3OTIgMC4wODAzIDAuNUMwLjA2OTkgMC41MjA4IDAuMDYwNiAwLjU0MTcgMC4wNTMgMC41NjI1QzAuMDQ1MyAwLjU4MzMgMC4wMzk0IDAuNjA0MiAwLjAzNTcgMC42MjVDMC4wMzIgMC42NDU4IDAuMDMwNSAwLjY2NjcgMC4wMzE5IDAuNjg3NUMwLjAzMzMgMC43MDgzIDAuMDM3NyAwLjcyOTIgMC4wNDU3IDAuNzVDMC4wNTM3IDAuNzcwOCAwLjA2NTUgMC43OTE3IDAuMDgxNyAwLjgxMjVDMC4wOTc4IDAuODMzMyAwLjExODUgMC44NTQyIDAuMTQzIDAuODc1QzAuMTY3NSAwLjg5NTggMC4xOTYgMC45MTY3IDAuMjI0MSAwLjkzNzVDMC4yNTIyIDAuOTU4MyAwLjI4MDMgMC45NzkyIDAuMjk1NSAxSDFWMHoiLz48L3N2Zz4K") 0 0 / calc(968 * var(--u)) 100% no-repeat,
+    linear-gradient(#000, #000) calc(967 * var(--u)) 0 / calc(100% - 967 * var(--u)) 100% no-repeat;
+}
+
+/* Copy */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  padding: calc(131 * var(--u)) 0 calc(62 * var(--u)) calc(138 * var(--u));
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6 * var(--u));
+  height: calc(39 * var(--u));
+  padding: 0 calc(19 * var(--u)) 0 calc(15 * var(--u));
+  border-radius: var(--r-pill);
+  font-family: var(--hero-font);
+  font-size: max(11px, calc(16 * var(--u)));
+  font-weight: 500;
+  color: #324068;
+  background: #dae7fc;
+}
+
+.hero__eyebrow strong {
+  font-weight: 700;
+  color: var(--hero-ink);
+}
+
+.hero__eyebrow-dot {
+  width: calc(11 * var(--u));
+  height: calc(11 * var(--u));
+  margin-right: calc(4 * var(--u));
+  border-radius: 50%;
+  background: var(--hero-amber);
+}
+
+.hero__title {
+  margin-top: calc(38 * var(--u));
+  font-family: var(--hero-font);
+  font-size: calc(115 * var(--u));
+  font-weight: 800;
+  line-height: 0.852;
+  letter-spacing: -0.012em;
+}
+
+.hero__title > span {
+  display: block;
+  width: fit-content;
+}
+
+.hero__title-project {
+  color: #0032cc;
+}
+
+.hero__title-kyj {
+  padding-bottom: 0.06em;
+  background: linear-gradient(90deg, #006efe 0%, #0b72fb 18%, #338bef 36%, #5896d2 49%, #9f9c83 62%, #e99f04 76%, #f3ae19 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle {
+  margin-top: calc(4 * var(--u));
+  font-family: var(--hero-font);
+  font-size: max(20px, calc(30.5 * var(--u)));
+  font-weight: 700;
+  line-height: 1.2;
+  color: #06104a;
+}
+
+/* Fixed optical size so glyph widths scale linearly: the em max-width then
+   keeps the same line breaks at every viewport width. */
+.hero__lead {
+  max-width: 34.1em;
+  margin-top: calc(12 * var(--u));
+  font-family: var(--hero-font);
+  font-size: max(14px, calc(20 * var(--u)));
+  font-optical-sizing: none;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--hero-text);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(27 * var(--u));
+  margin-top: calc(18 * var(--u));
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  height: max(46px, calc(70 * var(--u)));
+  border-radius: var(--r-pill);
+  font-family: var(--hero-font);
+  font-size: max(14px, calc(20 * var(--u)));
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur), background var(--dur);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-btn--primary {
+  min-width: calc(303 * var(--u));
+  justify-content: space-between;
+  gap: calc(20 * var(--u));
+  padding: 0 calc(19 * var(--u)) 0 calc(44 * var(--u));
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg, #006afc 0%, #0058f1 55%, #005cf8 100%);
+  box-shadow: 0 calc(14 * var(--u)) calc(28 * var(--u)) calc(-12 * var(--u)) rgba(0, 98, 246, 0.6);
+}
+
+.hero-btn--primary:hover {
+  color: #fff;
+  box-shadow: 0 calc(18 * var(--u)) calc(32 * var(--u)) calc(-12 * var(--u)) rgba(0, 98, 246, 0.7);
+}
+
+.hero-btn__arrow {
+  display: grid;
+  place-items: center;
+  width: max(30px, calc(43 * var(--u)));
+  height: max(30px, calc(43 * var(--u)));
+  border-radius: 50%;
+  color: var(--hero-blue);
+  background: #fff;
+}
+
+.hero-btn__arrow svg {
+  width: 52%;
+  stroke-width: 2.4;
+}
+
+.hero-btn--secondary {
+  min-width: calc(277 * var(--u));
+  justify-content: center;
+  gap: calc(12 * var(--u));
+  padding: 0 calc(30 * var(--u));
+  color: #03082e;
+  background: #fdfdfd;
+  border: max(1.5px, calc(2 * var(--u))) solid #dde3ee;
+  box-shadow: 0 calc(8 * var(--u)) calc(20 * var(--u)) calc(-12 * var(--u)) rgba(20, 45, 100, 0.25);
+}
+
+.hero-btn--secondary:hover {
+  color: #03082e;
+  border-color: #c3cde0;
+}
+
+.hero-btn--secondary svg {
+  width: max(20px, calc(28 * var(--u)));
+  color: #feb402;
+}
+
+/* Stat cards */
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(23 * var(--u));
+  margin: calc(39 * var(--u)) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: calc(23 * var(--u));
+  min-width: calc(209 * var(--u));
+  height: max(72px, calc(106 * var(--u)));
+  padding: calc(3 * var(--u)) calc(18 * var(--u)) 0 calc(16 * var(--u));
+  border-radius: calc(16 * var(--u));
+  background: #fff;
+  box-shadow:
+    0 calc(12 * var(--u)) calc(32 * var(--u)) calc(-14 * var(--u)) rgba(28, 58, 120, 0.2),
+    0 0 0 1px rgba(28, 58, 120, 0.04);
+}
+
+.hero-stat:nth-child(2) {
+  min-width: calc(222 * var(--u));
+}
+
+.hero-stat:nth-child(3) {
+  min-width: calc(241 * var(--u));
+}
+
+.hero-stat__icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: max(48px, calc(70 * var(--u)));
+  height: max(48px, calc(70 * var(--u)));
+  border-radius: 50%;
+}
+
+.hero-stat__icon svg {
+  width: 63%;
+}
+
+.hero-stat--amber .hero-stat__icon svg {
+  width: 58%;
+}
+
+.hero-stat--blue .hero-stat__icon {
+  color: #0676fd;
+  background: radial-gradient(circle at 35% 30%, #e4f0ff, #d4e7fe);
+}
+
+.hero-stat--amber .hero-stat__icon {
+  color: #f19e18;
+  background: radial-gradient(circle at 35% 30%, #fff7ee, #fdf0e0);
+}
+
+.hero-stat--green .hero-stat__icon {
+  color: #0caf46;
+  background: radial-gradient(circle at 35% 30%, #ebf8ee, #dbf2e0);
+}
+
+.hero-stat__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat__value {
+  font-family: var(--hero-font);
+  font-size: max(28px, calc(41 * var(--u)));
+  font-weight: 700;
+  line-height: 1;
+  color: #030f42;
+}
+
+.hero-stat__label {
+  margin-top: calc(7.5 * var(--u));
+  font-family: var(--hero-font);
+  font-size: max(10.5px, calc(14.6 * var(--u)));
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #535c78;
+}
+
+/* Stacked layout: copy on top, photo below with a wavy top edge */
+@media (max-width: 1279px) {
+  .hero {
+    --u: 0.82px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .hero__content {
+    width: auto;
+    padding: 56px var(--gutter) 48px;
+  }
+
+  .hero__map {
+    left: auto;
+    right: 2vw;
+    top: 56px;
+    width: min(565px, 58vw);
+  }
+
+  .hero__media {
+    order: 1;
+    position: relative;
+    left: 0;
+    height: min(78vw, 460px);
+  }
+
+  .hero__glass {
+    display: none;
+  }
+
+  .hero__frame {
+    filter:
+      drop-shadow(0 -10px 0 #c6daf6)
+      drop-shadow(0 -16px 0 #e3ecfb)
+      drop-shadow(0 -6px 16px rgba(70, 130, 240, 0.22));
+  }
+
+  .hero__photo {
+    object-position: 50% 64%;
+    -webkit-mask: none;
+    mask: none;
+    clip-path: url(#hero-wave-top);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    --u: 0.6px;
+  }
+
+  .hero__map {
+    right: -6vw;
+    top: 24px;
+    width: 92vw;
+    opacity: 0.55;
+  }
+
+  .hero__content {
+    padding-top: 40px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero__stats {
+    gap: 12px;
+  }
+
+  .hero-stat {
+    flex: 1 1 140px;
+    column-gap: 12px;
+    padding-right: 14px;
+  }
+}
+
+/* ---- Screens section ---------------------------------------------------- */
+
+.home-screens {
+  /* white under the banner; the stages below it bring their own pale blue band (#f1f7fd) */
+  --screens-bg: #fff;
+
+  position: relative;
+  background: var(--screens-bg);
+  /* the banner and the stage band scale with this width (cqw), which excludes the scrollbar */
+  container-type: inline-size;
+  /* cancels the page's scroll-padding, so "Back to Top" lands with the banner filling the screen */
+  scroll-margin-top: calc(-16px - var(--topbar-h));
+}
+
+/* only holds the "no match" note; the stage band is full width */
+.home-screens > .home-container {
+  padding-top: 8px;
+  padding-bottom: 80px;
+}
+
+/* ---- Screens banner (src/components/ScreensHero.jsx) --------------------- */
+/* Measured from a 2000 × 754 design: every size is N × --u. The banner fills the screen:
+   it is one screen tall and full width, and --u is as large as lets the design fit both
+   the width and the height (1px at 2000px wide, growing past that on big screens).
+   Text has px floors so it stays readable. */
+
+.screens-hero {
+  --u: min(calc(100cqw / 2000), calc(100svh / 770));
+  --sh-font: "Google Sans Flex", var(--font-display);
+  --sh-ink: #02197a;
+  --sh-navy: #111f82;
+  --sh-text: #5a6383;
+  --sh-blue: #0370fd;
+  --sh-line: #e3e6ec;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  font-family: var(--sh-font);
+  font-feature-settings: normal;
+  background: var(--screens-bg);
+}
+
+/* Not a stacking context: the map, wheel and copy all layer in .screens-hero.
+   One screen tall (taller only if the copy needs it). The copy keeps to the left edge
+   and the wheel, with the map that leads into it, to the right edge, all centred
+   vertically as in the design; a screen wider than the design's shape just widens
+   the space between them. */
+.screens-hero__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding: 16px 0;
+}
+
+/* The map's 2000 × 754 frame, placed from the wheel's corner (the routes run into it) */
+.screens-hero__map {
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 377 * var(--u));
+  right: 0;
+  width: calc(2000 * var(--u));
+  height: calc(754 * var(--u));
+}
+
+.screens-hero__route {
+  fill: none;
+  stroke: #f4bf35;
+  stroke-width: 2;
+  stroke-dasharray: 9 7;
+  stroke-linecap: round;
+}
+
+.screens-hero__pin path {
+  fill: #fdb908;
+  filter: drop-shadow(0 1.5px 2px rgba(176, 116, 0, 0.4));
+}
+
+.screens-hero__pin circle {
+  fill: #fff;
+}
+
+/* Wheel: at the right edge, hub at (1625, 365) of the map's frame */
+.screens-hero__wheel {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 382 * var(--u));
+  right: calc(5 * var(--u));
+  width: calc(740 * var(--u));
+  height: calc(740 * var(--u));
+  overflow: visible;
+}
+
+/* First view: the petals fly in one after another (0.18s apart), each from out along its
+   own direction (--from-x/y, --from-r: set per petal in JourneyWheel), and snap into place;
+   the last (of nine) lands at 8 × 0.18 + 1.4 ≈ 2.8s.
+
+   Then, from 3.2s, the loop: the petals make one slow turn round the hub, rest back in
+   place for 3s, and go again: 32s turn + 3s rest = 35s, so the turn ends at
+   32 / 35 ≈ 91.43%. Each petal's content turns back about its own centre at the same pace,
+   so it rides along inside its petal but stays upright and readable. The hub stays still.
+
+   All of it waits, paused, until the wheel first comes into view (.is-in-view). */
+.journey-wheel__petal {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: jw-petal-in 1.4s cubic-bezier(0.34, 1.3, 0.64, 1) calc(var(--i) * 0.18s) both;
+}
+
+.journey-wheel__spin {
+  transform-box: view-box;
+  transform-origin: 0 0; /* the hub (viewBox origin) */
+  animation: jw-spin 35s 3.2s infinite;
+}
+
+.journey-wheel__upright {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: jw-upright 35s 3.2s infinite;
+}
+
+.journey-wheel:not(.is-in-view) :is(.journey-wheel__petal, .journey-wheel__spin, .journey-wheel__upright) {
+  animation-play-state: paused;
+}
+
+@keyframes jw-petal-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--from-x), var(--from-y)) rotate(var(--from-r)) scale(0.6);
+  }
+}
+
+@keyframes jw-spin {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  91.43%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jw-upright {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  }
+
+  91.43%,
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-wheel__petal,
+  .journey-wheel__spin,
+  .journey-wheel__upright {
+    animation: none;
+  }
+}
+
+.screens-hero__wheel text {
+  font-family: var(--sh-font);
+}
+
+.journey-wheel__num {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  fill: #fff;
+}
+
+.journey-wheel__label {
+  font-size: 15px;
+  font-weight: 500;
+  fill: #fff;
+}
+
+.journey-wheel__kyj {
+  font-size: 45px;
+  font-weight: 800;
+  fill: #021e7d;
+}
+
+.journey-wheel__journey {
+  font-size: 22px;
+  font-weight: 700;
+  fill: #12216c;
+}
+
+.journey-wheel__stages {
+  font-size: 18.5px;
+  font-weight: 500;
+  fill: #737a9c;
+}
+
+/* Copy */
+.screens-hero__content {
+  position: relative;
+  z-index: 3;
+  flex: none;
+  width: calc(830 * var(--u));
+  /* the design's copy sits 16.5 below the middle */
+  margin: calc(33 * var(--u)) 0 0 calc(117 * var(--u));
+}
+
+.screens-hero__title {
+  font-family: var(--sh-font);
+  font-size: calc(122 * var(--u));
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: var(--sh-ink);
+}
+
+.screens-hero__title-all {
+  letter-spacing: 0.025em;
+}
+
+.screens-hero__title-stages {
+  margin-left: calc(4 * var(--u));
+  letter-spacing: -0.012em;
+  background: linear-gradient(90deg, #0a6ff8 0%, #0b72f6 38%, #0887cc 47%, #128ba8 52%, #528986 57%, #c69933 63%, #eda015 71%, #fb9c0d 78%, #f8960f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.screens-hero__lead {
+  margin-top: calc(6.3 * var(--u));
+  font-size: max(14px, calc(24 * var(--u)));
+  font-weight: 400;
+  line-height: 1.375;
+  color: var(--sh-text);
+}
+
+.screens-hero__keys {
+  display: inline-flex;
+  gap: calc(13 * var(--u));
+  margin: calc(-5 * var(--u)) calc(17 * var(--u)) calc(-5 * var(--u)) calc(14 * var(--u));
+  vertical-align: middle;
+}
+
+.screens-hero kbd {
+  display: inline-grid;
+  place-items: center;
+  border-radius: calc(9 * var(--u));
+  font-family: var(--sh-font);
+  background: #fff;
+  border: max(1px, calc(1.5 * var(--u))) solid var(--sh-line);
+  box-shadow: 0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(20, 30, 60, 0.07);
+}
+
+.screens-hero__keys kbd {
+  width: max(26px, calc(44 * var(--u)));
+  height: max(24px, calc(40 * var(--u)));
+  color: #296cf3;
+}
+
+.screens-hero__keys svg {
+  width: 42%;
+  stroke-width: 2.4;
+}
+
+/* Search */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: calc(799 * var(--u));
+  height: max(48px, calc(75 * var(--u)));
+  margin-top: calc(30.5 * var(--u));
+  padding: 0 calc(24 * var(--u)) 0 max(42px, calc(79 * var(--u)));
+  border-radius: calc(28 * var(--u));
+  background: #fff;
+  border: max(1px, calc(1.5 * var(--u))) solid var(--sh-line);
+  box-shadow: 0 calc(10 * var(--u)) calc(26 * var(--u)) calc(-8 * var(--u)) rgba(20, 30, 60, 0.16);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.search:focus-within {
+  border-color: var(--sh-blue);
+  box-shadow:
+    0 0 0 calc(4 * var(--u)) rgba(3, 112, 253, 0.14),
+    0 calc(10 * var(--u)) calc(26 * var(--u)) calc(-8 * var(--u)) rgba(20, 30, 60, 0.16);
+}
+
+.search > svg {
+  position: absolute;
+  left: max(12px, calc(26 * var(--u)));
+  width: max(20px, calc(29 * var(--u)));
+  height: max(20px, calc(29 * var(--u)));
+  stroke-width: 2.3;
+  color: #1f5fdc;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: var(--sh-font);
+  font-size: max(14px, calc(23 * var(--u)));
+  color: var(--sh-navy);
+}
+
+.search input::placeholder {
+  color: #8b91ad;
+  opacity: 1;
+}
+
+.search input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+/* Stage filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(19 * var(--u)) calc(13 * var(--u));
+  margin-top: calc(26 * var(--u));
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(139 * var(--u));
+  height: max(40px, calc(65 * var(--u)));
+  padding: 0 calc(22 * var(--u));
+  border-radius: var(--r-pill);
+  font-family: var(--sh-font);
+  font-size: max(14px, calc(21 * var(--u)));
+  font-weight: 600;
+  color: var(--sh-navy);
+  background: #fff;
+  border: 1px solid rgba(20, 30, 60, 0.04);
+  box-shadow:
+    0 calc(4 * var(--u)) calc(12 * var(--u)) rgba(20, 30, 60, 0.07),
+    0 calc(12 * var(--u)) calc(26 * var(--u)) calc(-12 * var(--u)) rgba(20, 30, 60, 0.18);
+  transition: color var(--dur-fast), background var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+}
+
+.filter:hover {
+  color: var(--sh-blue);
+  transform: translateY(-1px);
+}
+
+.filter--all {
+  min-width: calc(115 * var(--u));
+}
+
+.filter--badge {
+  min-width: calc(191 * var(--u));
+  gap: calc(21 * var(--u));
+  padding: 0 calc(33 * var(--u)) 0 calc(36 * var(--u));
+}
+
+.filter__medal {
+  flex-shrink: 0;
+  width: max(18px, calc(27 * var(--u)));
+  height: max(25px, calc(37 * var(--u)));
+}
+
+.filter.is-active {
+  color: #fff;
+  background: linear-gradient(180deg, #0a78ff 0%, #0068f6 100%);
+  border-color: transparent;
+  box-shadow: 0 calc(12 * var(--u)) calc(24 * var(--u)) calc(-10 * var(--u)) rgba(3, 112, 253, 0.6);
+}
+
+/* Too narrow for the map between the copy and the wheel */
+@media (max-width: 999px) {
+  .screens-hero__map {
+    display: none;
+  }
+}
+
+/* Portrait and squarish screens (3 : 2 or narrower): copy on top across the full
+   width, and the wheel below it, as large as fits in what's left of the screen */
+@media (max-aspect-ratio: 3/2) {
+  .screens-hero {
+    --u: 0.62px;
+  }
+
+  .screens-hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 48px var(--gutter) 32px;
+  }
+
+  .screens-hero__map {
+    display: none;
+  }
+
+  .screens-hero__content {
+    width: auto;
+    margin: 0;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .screens-hero__wheel {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex: 1 1 0;
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+  }
+}
+
+@media (max-aspect-ratio: 3/2) and (max-width: 640px) {
+  .screens-hero {
+    --u: 0.5px;
+  }
+
+  .screens-hero__inner {
+    padding-top: 32px;
+  }
+}
+
+/* Below the design's size the copy's text is held at its floors, so the lead just wraps */
+@media (max-width: 1199px) {
+  .screens-hero__lead br {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 16px stops iOS zooming into the field */
+  .search input {
+    font-size: 16px;
+  }
+}
+
+/* ---- Empty state --------------------------------------------------------- */
+
+.empty {
+  margin-top: 48px;
+  padding: 48px 24px;
+  border-radius: var(--r-lg);
+  text-align: center;
+  color: var(--ink-500);
+  background: var(--surface);
+  border: 1.5px dashed var(--ink-200);
+}
+
+.empty[hidden] {
+  display: none;
+}
+
+.empty__icon {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 36px;
+}
+
+.empty strong {
+  color: var(--ink-900);
+}

@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Screen 9 — IEC Registration (Stage 2 · 1 of 3)
+   Stage 2 family: intro card · status tracker · side checklist · fee bar
+   ========================================================================== */
+
+/* ---- Intro / context card ------------------------------------------------ */
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 20px 36px;
+  padding: 26px 28px;
+  background:
+    radial-gradient(380px 220px at 100% 0%, rgba(187, 222, 251, 0.75), transparent 70%),
+    var(--tone-soft);
+}
+
+.intro .card__title {
+  margin-bottom: 8px;
+  font-size: var(--fs-lg);
+}
+
+.intro__text {
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  color: #1565c0;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  background: #fff;
+  border: 1px solid var(--tone-line);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 20px;
+  line-height: 1;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.contact__text {
+  min-width: 0;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  line-height: 1.6;
+  color: var(--accent-ink);
+  overflow-wrap: anywhere;
+}
+
+/* ---- Application status tracker ----------------------------------------- */
+
+.tracker .card__strip {
+  padding: 16px 24px;
+}
+
+.tracker .tag {
+  flex-shrink: 0;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.tracker__steps {
+  padding: 24px 24px 26px;
+}
+
+.tracker .timeline__item {
+  padding-bottom: 22px;
+}
+
+.tracker .timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.tracker .timeline__text {
+  color: var(--ink-500);
+}
+
+.tracker .timeline__item.is-done {
+  --tone: var(--success-ink);
+}
+
+.tracker .timeline__item.is-done::before {
+  background: color-mix(in srgb, var(--success) 40%, var(--ink-150));
+}
+
+.tracker .timeline__item.is-active {
+  --tone: var(--accent);
+}
+
+.tracker .timeline__item.is-active .timeline__dot {
+  box-shadow:
+    0 0 0 4px var(--surface),
+    0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.tracker .timeline__item.is-active .timeline__body {
+  margin-top: -6px;
+  padding: 10px 14px 12px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.tracker .timeline__item.is-active .timeline__title {
+  color: var(--accent-ink);
+}
+
+.tracker .timeline__item.is-pending .timeline__dot {
+  color: var(--ink-400);
+  background: var(--ink-100);
+  box-shadow: 0 0 0 4px var(--surface), inset 0 0 0 1.5px var(--ink-200);
+}
+
+.tracker .timeline__item.is-pending .timeline__title {
+  color: var(--ink-600);
+}
+
+/* ---- Documents checklist ------------------------------------------------- */
+
+.doc-card .card__head {
+  margin-bottom: 12px;
+}
+
+.doc-list .list__item {
+  align-items: center;
+  padding: 12px 0;
+}
+
+.doc-list .list__item:first-child {
+  padding-top: 0;
+}
+
+.doc-list .list__item:last-child {
+  padding-bottom: 0;
+}
+
+.doc-list .list__icon--sm {
+  width: 26px;
+  height: 26px;
+}
+
+.doc-list .list__title {
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--ink-800);
+}
+
+.doc-list .is-pending .list__icon {
+  color: var(--ink-400);
+  background: var(--ink-50);
+  border: 1.5px dashed var(--ink-300);
+}
+
+.doc-list .is-pending .list__title {
+  color: var(--ink-500);
+}
+
+/* ---- Annual alert --------------------------------------------------------- */
+
+.annual-alert {
+  padding: 18px 20px;
+  line-height: 1.75;
+}
+
+/* ---- Fee status in the action bar ---------------------------------------- */
+
+.action-bar__text .fee-summary__val {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 3px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--success-ink);
+  background: var(--success-soft);
+  border: 1px solid var(--success-line);
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    padding: 22px 20px;
+  }
+
+  .tracker .card__strip {
+    flex-wrap: wrap;
+  }
+
+  .tracker__steps {
+    padding: 20px 18px 22px;
+  }
+}

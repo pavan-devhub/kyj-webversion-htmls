@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Screen 11 — FSSAI Licence · Stage 2 Gate (Stage 2 · 3 of 3)
+   Stage 2 family: intro card · upload workflow · sticky gate panel
+   ========================================================================== */
+
+.section-label--te {
+  font-size: var(--fs-xs);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+/* ---- Intro / context card ------------------------------------------------ */
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 20px 36px;
+  padding: 26px 28px;
+  background:
+    radial-gradient(380px 220px at 100% 0%, rgba(209, 196, 233, 0.8), transparent 70%),
+    var(--tone-soft);
+}
+
+.intro .card__title {
+  margin-bottom: 8px;
+  font-size: var(--fs-lg);
+}
+
+.intro__text {
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  color: #4527a0;
+}
+
+/* Licence type tiles */
+.licences {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.licence {
+  padding: 16px 18px;
+  border-color: #e1d5f0;
+  box-shadow: var(--shadow-xs);
+}
+
+.licence .kv-cell__k {
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.04em;
+  color: var(--ink-500);
+}
+
+.licence .kv-cell__v {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
+
+.licence.is-active {
+  background: linear-gradient(160deg, #fff 30%, #e8eaf6);
+  border: 1.5px solid var(--accent);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent),
+    var(--shadow-sm);
+}
+
+.licence.is-active .kv-cell__v {
+  color: var(--accent-ink);
+}
+
+/* ---- Upload drop zone ---------------------------------------------------- */
+
+.fssai-drop {
+  gap: 8px;
+  padding: 32px 28px;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 10px, rgba(40, 53, 147, 0.035) 10px 20px),
+    #eef0fa;
+  border-color: rgba(92, 107, 192, 0.5);
+}
+
+.fssai-drop__icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  font-size: 30px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid var(--accent-line);
+  box-shadow: 0 14px 30px -14px var(--accent-glow);
+}
+
+.fssai-drop__title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.fssai-drop__sub {
+  font-size: var(--fs-sm);
+  color: #5c6bc0;
+}
+
+/* ---- Uploaded file confirmation ----------------------------------------- */
+
+.file-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+}
+
+.file-card__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  font-size: 22px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid var(--tone-line);
+  box-shadow: var(--shadow-xs);
+}
+
+.file-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-card__name {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: var(--tone-ink);
+  overflow-wrap: anywhere;
+}
+
+.file-card__meta {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--tone);
+}
+
+/* ---- The hard gate --------------------------------------------------------- */
+
+.gate {
+  border-width: 1.5px;
+}
+
+.gate__strip {
+  justify-content: center;
+  text-align: center;
+}
+
+.gate__strip .card__strip-title {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.gate__list .list__item {
+  align-items: center;
+  border-color: #e8eaf6;
+}
+
+.gate__list .list__title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.gate__val {
+  flex-shrink: 0;
+  font-weight: 750;
+}
+
+.gate__result {
+  margin: 4px 24px 24px;
+  font-weight: 650;
+  background:
+    radial-gradient(220px 120px at 50% 0%, rgba(129, 199, 132, 0.35), transparent 70%),
+    var(--tone-soft);
+}
+
+.pending-note[hidden] {
+  display: none;
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    padding: 22px 20px;
+  }
+
+  .licences {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .file-card {
+    flex-wrap: wrap;
+  }
+
+  .gate__result {
+    margin: 4px 18px 18px;
+  }
+}

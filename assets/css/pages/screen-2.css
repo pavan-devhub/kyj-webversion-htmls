@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Screen 2 — FEED CARD Basic Issued (welcome to the cooperative)
+   ========================================================================== */
+
+/* ---- Hero: welcome + issued card ------------------------------------- */
+
+.welcome-hero {
+  padding-bottom: 30px;
+}
+
+/* the issued card is its own dark surface, so no feature tile behind it */
+.welcome-hero .page-head__visual {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.welcome-hero .page-head__visual::before {
+  content: none;
+}
+
+.welcome-emoji {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  font-size: 32px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 14px 28px -14px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-title {
+  font-size: clamp(30px, 3.2vw, 42px);
+}
+
+/* The issued FEED CARD, presented as the hero visual */
+.welcome-card {
+  max-width: 380px;
+  transform: rotate(-3deg);
+  background: linear-gradient(135deg, #0f3d24 0%, #1b5e20 38%, #2e7d32 70%, #4caf50 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 40px 70px -26px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.welcome-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.welcome-card__top .member-card__brand {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.5;
+}
+
+.welcome-card__top .member-card__tier {
+  flex-shrink: 0;
+}
+
+.welcome-card .member-card__chip {
+  margin: 18px 0 0;
+}
+
+.welcome-card__valid {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (min-width: 901px) {
+  .welcome-hero .page-head__body {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+}
+
+/* ---- KRISHI COINS ------------------------------------------------------ */
+
+.welcome-coins {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-coins .coins__note {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.welcome-coins .coins__value {
+  font-size: 40px;
+}
+
+.welcome-coins .coins__row {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--tone-line);
+}
+
+.welcome-coins .coins__row.is-muted {
+  color: var(--ink-400);
+  background: rgba(255, 255, 255, 0.4);
+  border-style: dashed;
+}
+
+.welcome-coins .coins__val {
+  white-space: nowrap;
+}
+
+/* ---- WhatsApp: thread fills the row height --------------------------- */
+
+.welcome-wa {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-wa .wa__thread {
+  flex: 1;
+}
+
+.welcome-wa .wa__bubble {
+  max-width: 560px;
+}
+
+/* ---- Next steps -------------------------------------------------------- */
+
+.next-card .card__head {
+  margin-bottom: 18px;
+}
+
+.next-list {
+  padding: 0;
+  list-style: none;
+}
+
+.next-list__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--tone-ink);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--tone-line);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+
+.next-list__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.next-list__item .num-badge {
+  width: 32px;
+  height: 32px;
+  font-size: var(--fs-sm);
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+  box-shadow: 0 8px 16px -8px rgba(106, 27, 154, 0.7);
+}
+
+/* Single CTA, aligned to the right */
+.action-bar {
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .welcome-card {
+    transform: none;
+  }
+}

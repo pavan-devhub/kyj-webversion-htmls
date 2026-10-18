@@ -1,0 +1,331 @@
+/* ==========================================================================
+   Screen 22 — Sample Dispatch Tracker (Stage 6 · DHL courier)
+   ========================================================================== */
+
+/* ---- DHL waybill card (hero visual) ------------------------------------- */
+
+.dhl-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(440px, 100%);
+  padding: 18px 22px 18px 20px;
+  border-radius: var(--r-lg);
+  color: #1a1a1a;
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(255, 255, 255, 0.12) 14px 28px),
+    linear-gradient(135deg, #ffd84d 0%, #ffcc00 55%, #ffb800 100%);
+  box-shadow:
+    0 22px 44px -20px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* red band on the trailing edge, like a courier label */
+.dhl-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  background: #d40511;
+}
+
+.dhl-card__logo {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: #d40511;
+  box-shadow: 0 8px 16px -8px rgba(212, 5, 17, 0.8);
+}
+
+.dhl-card__info {
+  min-width: 0;
+}
+
+.dhl-card__awb {
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+.dhl-card__detail {
+  margin-top: 4px;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: #5d4037;
+}
+
+/* ---- Live tracker (timeline with explicit connector lines) -------------- */
+
+.track {
+  padding: 24px 24px 26px;
+}
+
+.track .timeline__item::before {
+  display: none;
+}
+
+.track__line {
+  position: absolute;
+  left: 15px;
+  top: 34px;
+  bottom: 2px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--ink-200);
+}
+
+.track__line.is-done {
+  background: var(--accent);
+}
+
+.track .timeline__title {
+  line-height: 1.45;
+}
+
+.track .timeline__text {
+  color: var(--ink-600);
+}
+
+.track .is-active .timeline__dot {
+  color: #222;
+  background: #ffcc00;
+  box-shadow: 0 0 0 4px var(--surface), 0 0 0 8px rgba(255, 204, 0, 0.32);
+  animation: live-ring 2s ease-out infinite;
+}
+
+.track .is-active .timeline__body {
+  margin: -6px 0 0 -10px;
+  padding: 10px 14px 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fff8d6, rgba(255, 248, 214, 0));
+  border-left: 3px solid #ffcc00;
+}
+
+.track .is-active .timeline__meta {
+  color: #8a6d00;
+  font-weight: 600;
+}
+
+.track .is-future .timeline__dot {
+  color: var(--ink-400);
+  background: var(--surface);
+  border: 2px solid var(--ink-200);
+  box-shadow: 0 0 0 4px var(--surface);
+}
+
+.track .is-future .timeline__meta {
+  color: var(--ink-400);
+}
+
+.track .is-last .timeline__title {
+  color: var(--ink-500);
+}
+
+.track .is-last .timeline__text {
+  color: var(--ink-400);
+}
+
+@keyframes live-ring {
+  0%   { box-shadow: 0 0 0 4px var(--surface), 0 0 0 4px rgba(255, 204, 0, 0.5); }
+  70%  { box-shadow: 0 0 0 4px var(--surface), 0 0 0 12px rgba(255, 204, 0, 0); }
+  100% { box-shadow: 0 0 0 4px var(--surface), 0 0 0 4px rgba(255, 204, 0, 0); }
+}
+
+/* ---- Sample pack ---------------------------------------------------------- */
+
+.sample-pack .list__title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.sample-pack .list__item {
+  align-items: center;
+  padding: 12px 0;
+}
+
+.sample-pack .list__item:first-child {
+  padding-top: 0;
+}
+
+.sample-pack .list__item:last-child {
+  padding-bottom: 0;
+}
+
+.sample-pack .list__aside {
+  padding: 3px 10px;
+  white-space: nowrap;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 650;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+/* ---- Buyer notification --------------------------------------------------- */
+
+.buyer .kv__val {
+  overflow-wrap: anywhere;
+}
+
+/* ---- Stage 6 gate --------------------------------------------------------- */
+
+.gate {
+  background:
+    radial-gradient(260px 140px at 100% 0%, rgba(255, 213, 79, 0.35), transparent 70%),
+    var(--tone-soft);
+}
+
+.gate .callout__title {
+  margin-bottom: 10px;
+  color: #e65100;
+}
+
+.gate__text {
+  font-size: var(--fs-sm);
+  line-height: 1.85;
+  color: #bf360c;
+}
+
+.gate__text strong {
+  color: #8d2a00;
+}
+
+/* ---- Badge preview -------------------------------------------------------- */
+
+.badge-preview {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: var(--r-lg);
+  color: #fff;
+  background:
+    radial-gradient(220px 160px at 100% 0%, rgba(255, 213, 79, 0.28), transparent 70%),
+    linear-gradient(135deg, #0f4d16 0%, #1b5e20 45%, #2e7d32 100%);
+  box-shadow: 0 18px 36px -20px rgba(27, 94, 32, 0.8);
+}
+
+.badge-preview__icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 32px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.4), transparent 55%),
+    rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
+}
+
+.badge-preview__info {
+  min-width: 0;
+}
+
+.badge-preview__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 750;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.badge-preview__sub {
+  margin-top: 4px;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.badge-preview__coins {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: #3b2a00;
+  background: linear-gradient(135deg, #ffe082, #ffc107);
+}
+
+/* ---- Running coins strip ------------------------------------------------- */
+
+.coins-strip {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.coins-strip__label {
+  font-weight: 650;
+  color: #c2410c;
+}
+
+.coins-strip__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  line-height: 1;
+  color: #bf360c;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+/* Between the 1180px and 960px grid breakpoints the reward column takes a
+   full row, so badge + coins sit side by side instead of half-width. */
+@media (max-width: 1180px) and (min-width: 961px) {
+  .reward-col {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .reward-col > * {
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-head__visual {
+    width: 100%;
+  }
+
+  .dhl-card {
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 520px) {
+  .dhl-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .sample-pack .list__item {
+    flex-wrap: wrap;
+  }
+
+  .sample-pack .list__aside {
+    margin-left: 42px;
+  }
+}

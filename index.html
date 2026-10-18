@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KYJ Screens · Krushi Yeva Jayate</title>
+  <meta name="description" content="KYJ (Krushi Yeva Jayate) — all 30 farmer-journey screens in web layout.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..900&amp;family=Inter:wght@300..800&amp;family=JetBrains+Mono:wght@400..700&amp;family=Noto+Sans+Telugu:wght@400..700&amp;family=Outfit:wght@300..900&amp;family=Plus+Jakarta+Sans:wght@500..800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/site/frame.css">
+  <link rel="stylesheet" href="assets/css/site/footer.css">
+  <link rel="stylesheet" href="assets/css/site/navbar.css">
+  <link rel="stylesheet" href="assets/css/site/notification-bell.css">
+  <link rel="stylesheet" href="assets/css/components/stage-journey.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/site/navbar.js" defer></script>
+  <script src="assets/js/site/footer.js" defer></script>
+  <script src="assets/js/data/screens.js" defer></script>
+  <script src="assets/js/pages/home.js" defer></script>
+</head>
+<body>
+  <div class="kyj-page">
+    <div class="fw-services-overlay" hidden=""></div>
+    <nav class="fw-nav-root" aria-label="Main navigation">
+      <div class="fw-navbar">
+        <button type="button" class="fw-navbar-logo" data-page="home" aria-label="FEED MSCS LTD home">
+          <span class="fw-navbar-logo-badge">
+            <img alt="FEED MSCS LTD" src="assets/images/feed/dashboard-logo.avif">
+          </span>
+          <span class="fw-navbar-logo-text">
+            <span class="fw-navbar-logo-title">FEED MSCS LTD</span>
+            <span class="fw-navbar-logo-tagline">Empowering Farmers, Enriching Futures</span>
+          </span>
+        </button>
+        <span class="fw-navbar-divider" aria-hidden="true"></span>
+        <ul class="fw-navbar-links">
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="home" data-page="home">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house fw-nav-icon" aria-hidden="true">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Home</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="about">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 fw-nav-icon" aria-hidden="true">
+                <path d="M10 12h4"></path>
+                <path d="M10 8h4"></path>
+                <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">About Us</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down fw-nav-chevron" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="services" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings fw-nav-icon" aria-hidden="true">
+                <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down fw-nav-chevron" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="fw-services-dropdown" hidden="">
+              <div class="fw-services-dropdown-spacer"></div>
+              <div class="srv-cards-grid">
+                <div class="srv-card" data-page="kyj" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0s 1 normal backwards running fwFlyInLeft; cursor: pointer;">
+                  <div class="srv-card-badge color-green">01</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-green">
+                      <img alt="KRUSHI YEVA JAYATE" class="srv-card-image" src="assets/images/feed/services/icon-krushi-yeva-jayate.png">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>KRUSHI YEVA JAYATE</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s 1 normal backwards running fwFlyInTop; cursor: default;">
+                  <div class="srv-card-badge color-green-light">02</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-green-light">
+                      <img alt="YUVA KRUSHI" class="srv-card-image" src="assets/images/feed/services/icon-yuva-krushi.svg">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>YUVA KRUSHI</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s 1 normal backwards running fwFlyInBottom; cursor: default;">
+                  <div class="srv-card-badge color-blue">03</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-blue">
+                      <img alt="MY ORG" class="srv-card-image" src="assets/images/feed/services/icon-buyers-connection.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY ORG</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="exports" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s 1 normal backwards running fwFlyInRight; cursor: pointer;">
+                  <div class="srv-card-badge color-teal">04</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-teal">
+                      <img alt="MY EXPORTS" class="srv-card-image" src="assets/images/feed/services/icon-country-selection.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY EXPORTS</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="loans-finance" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s 1 normal backwards running fwFlyInLeft; cursor: pointer;">
+                  <div class="srv-card-badge color-yellow">05</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-yellow">
+                      <img alt="LOANS &amp; FINANCE" class="srv-card-image" src="assets/images/feed/services/icon-finance.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>LOANS &amp; FINANCE</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="product360" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s 1 normal backwards running fwFlyInTop; cursor: pointer;">
+                  <div class="srv-card-badge color-orange">06</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-orange">
+                      <img alt="PRODUCT 360" class="srv-card-image" src="assets/images/feed/services/icon-product-selection.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>PRODUCT 360</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="mybusiness" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s 1 normal backwards running fwFlyInBottom; cursor: pointer;">
+                  <div class="srv-card-badge color-purple">07</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-purple">
+                      <img alt="MY BUSINESS" class="srv-card-image" src="assets/images/feed/services/icon-process-order.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY BUSINESS</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s 1 normal backwards running fwFlyInRight; cursor: default;">
+                  <div class="srv-card-badge color-pink">08</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-pink">
+                      <img alt="MY EDUCATION" class="srv-card-image" src="assets/images/feed/services/icon-documentation.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY EDUCATION</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="feedworld" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s 1 normal backwards running fwFlyInLeft; cursor: pointer;">
+                  <div class="srv-card-badge color-blue-light">09</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-blue-light">
+                      <img alt="FEED WORLD" class="srv-card-image" src="assets/images/feed/services/icon-why-exports.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>FEED WORLD</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="epm" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s 1 normal backwards running fwFlyInTop; cursor: pointer;">
+                  <div class="srv-card-badge color-green-light">10</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-green-light">
+                      <img alt="EPM" class="srv-card-image" src="assets/images/feed/services/icon-start-exports.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>EPM</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="TradeFairs" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s 1 normal backwards running fwFlyInBottom; cursor: pointer;">
+                  <div class="srv-card-badge color-orange-light">11</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-orange-light">
+                      <img alt="TRADE FAIRS" class="srv-card-image" src="assets/images/feed/services/icon-trade-updates.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>TRADE FAIRS</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="safe-mission" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s 1 normal backwards running fwFlyInRight; cursor: pointer;">
+                  <div class="srv-card-badge color-teal">12</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-teal">
+                      <img alt="SAFE MISSION" class="srv-card-image" src="assets/images/feed/services/icon-policies.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>SAFE MISSION</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="tools" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s 1 normal backwards running fwFlyInLeft; cursor: pointer;">
+                  <div class="srv-card-badge color-purple-light">13</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-purple-light">
+                      <img alt="MY TOOLS" class="srv-card-image" src="assets/images/feed/services/icon-tools-services.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY TOOLS</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" data-page="schemes" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s 1 normal backwards running fwFlyInTop; cursor: pointer;">
+                  <div class="srv-card-badge color-yellow">14</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-yellow">
+                      <img alt="KNOW YOUR SCHEMES" class="srv-card-image" src="assets/images/feed/services/icon-policies.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>KNOW YOUR SCHEMES</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s 1 normal backwards running fwFlyInBottom; cursor: default;">
+                  <div class="srv-card-badge color-orange">15</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-orange">
+                      <img alt="MY MARKET" class="srv-card-image" src="assets/images/feed/services/icon-product-selection.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>MY MARKET</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="srv-card" style="animation: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.75s 1 normal backwards running fwFlyInRight; cursor: default;">
+                  <div class="srv-card-badge color-blue">16</div>
+                  <div class="srv-card-content">
+                    <div class="srv-icon-circle color-blue">
+                      <img alt="FEED CARD" class="srv-card-image" src="assets/images/feed/services/icon-tariffs.avif">
+                    </div>
+                    <div class="srv-card-text-area">
+                      <h3>FEED CARD</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="events">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar fw-nav-icon" aria-hidden="true">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Events &amp; Updates</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="roadmap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map fw-nav-icon" aria-hidden="true">
+                <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path>
+                <path d="M15 5.764v15"></path>
+                <path d="M9 3.236v15"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Export Road Map</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="how" data-page="how">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity fw-nav-icon" aria-hidden="true">
+                <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">How Feed Works</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="fpo" data-page="fpo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users fw-nav-icon" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">FPO</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="exports" data-page="exports">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package fw-nav-icon" aria-hidden="true">
+                <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
+                <path d="M12 22V12"></path>
+                <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                <path d="m7.5 4.27 9 5.15"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Exports</span>
+              </span>
+            </button>
+          </li>
+          <li class="fw-nav-item">
+            <button type="button" class="fw-nav-btn" data-nav="contact" data-page="contact">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call fw-nav-icon" aria-hidden="true">
+                <path d="M13 2a9 9 0 0 1 9 9"></path>
+                <path d="M13 6a5 5 0 0 1 5 5"></path>
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+              </svg>
+              <span class="fw-nav-label-row">
+                <span class="fw-nav-label">Contact Us</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+        <span class="fw-navbar-divider fw-navbar-divider--actions" aria-hidden="true"></span>
+        <div class="fw-navbar-actions">
+          <div class="nb-wrap">
+            <button type="button" class="nb-bell" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell" aria-hidden="true">
+                <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+              </svg>
+            </button>
+            <div class="nb-panel" role="dialog" aria-label="Notifications" hidden="">
+              <div class="nb-head">
+                <strong>Notifications</strong>
+              </div>
+              <p class="nb-empty">No new EPMs right now. Upcoming EPMs are announced here 15 days before they are held.</p>
+              <p class="nb-foot"><button type="button" data-page="login">Log in</button> to get reminders and updates about the EPMs you register for.</p>
+            </div>
+          </div>
+          <button type="button" class="fw-search-btn" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true">
+              <path d="m21 21-4.34-4.34"></path>
+              <circle cx="11" cy="11" r="8"></circle>
+            </svg>
+          </button>
+          <div class="fw-account-wrap">
+            <button type="button" class="fw-account-btn" data-page="login">
+              <span class="fw-account-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user" aria-hidden="true">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span class="fw-account-label">My Account</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="fw-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true" data-icon="open">
+          <path d="M4 5h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 19h16"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true" data-icon="close" hidden="">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </nav>
+    <div class="fw-mobile-backdrop" hidden=""></div>
+    <div class="fw-mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation" hidden="">
+      <div class="fw-mobile-header">
+        <div class="fw-mobile-header-brand">
+          <span class="fw-mobile-logo-badge">
+            <img alt="FEED MSCS LTD" src="assets/images/feed/dashboard-logo.avif">
+          </span>
+          <span class="fw-mobile-header-title">FEED MSCS LTD</span>
+        </div>
+        <button type="button" class="fw-mobile-close" aria-label="Close menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <ul class="fw-mobile-nav">
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="home" data-page="home">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(255, 247, 237); color: rgb(234, 88, 12);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house" aria-hidden="true">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Home</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="about">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(255, 247, 237); color: rgb(234, 88, 12);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2" aria-hidden="true">
+                <path d="M10 12h4"></path>
+                <path d="M10 8h4"></path>
+                <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">About Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down fw-mobile-chevron" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="services" aria-expanded="false">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(254, 249, 195); color: rgb(202, 138, 4);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings" aria-hidden="true">
+                <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Services</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down fw-mobile-chevron" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+          <div class="fw-mobile-submenu" hidden="">
+            <button type="button" class="fw-mobile-submenu-item" data-page="kyj"><img alt="" src="assets/images/feed/services/icon-krushi-yeva-jayate.png">KRUSHI YEVA JAYATE</button>
+            <button type="button" class="fw-mobile-submenu-item" disabled=""><img alt="" src="assets/images/feed/services/icon-yuva-krushi.svg">YUVA KRUSHI</button>
+            <button type="button" class="fw-mobile-submenu-item" disabled=""><img alt="" src="assets/images/feed/services/icon-buyers-connection.avif">MY ORG</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="exports"><img alt="" src="assets/images/feed/services/icon-country-selection.avif">MY EXPORTS</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="loans-finance"><img alt="" src="assets/images/feed/services/icon-finance.avif">LOANS &amp; FINANCE</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="product360"><img alt="" src="assets/images/feed/services/icon-product-selection.avif">PRODUCT 360</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="mybusiness"><img alt="" src="assets/images/feed/services/icon-process-order.avif">MY BUSINESS</button>
+            <button type="button" class="fw-mobile-submenu-item" disabled=""><img alt="" src="assets/images/feed/services/icon-documentation.avif">MY EDUCATION</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="feedworld"><img alt="" src="assets/images/feed/services/icon-why-exports.avif">FEED WORLD</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="epm"><img alt="" src="assets/images/feed/services/icon-start-exports.avif">EPM</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="TradeFairs"><img alt="" src="assets/images/feed/services/icon-trade-updates.avif">TRADE FAIRS</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="safe-mission"><img alt="" src="assets/images/feed/services/icon-policies.avif">SAFE MISSION</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="tools"><img alt="" src="assets/images/feed/services/icon-tools-services.avif">MY TOOLS</button>
+            <button type="button" class="fw-mobile-submenu-item" data-page="schemes"><img alt="" src="assets/images/feed/services/icon-policies.avif">KNOW YOUR SCHEMES</button>
+            <button type="button" class="fw-mobile-submenu-item" disabled=""><img alt="" src="assets/images/feed/services/icon-product-selection.avif">MY MARKET</button>
+            <button type="button" class="fw-mobile-submenu-item" disabled=""><img alt="" src="assets/images/feed/services/icon-tariffs.avif">FEED CARD</button>
+          </div>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="events">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(254, 249, 195); color: rgb(202, 138, 4);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar" aria-hidden="true">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Events &amp; Updates</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="roadmap">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(236, 252, 203); color: rgb(101, 163, 13);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map" aria-hidden="true">
+                <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path>
+                <path d="M15 5.764v15"></path>
+                <path d="M9 3.236v15"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Export Road Map</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="how" data-page="how">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(240, 253, 244); color: rgb(22, 163, 74);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" aria-hidden="true">
+                <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">How Feed Works</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="fpo" data-page="fpo">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(240, 253, 244); color: rgb(22, 163, 74);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">FPO</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="exports" data-page="exports">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(240, 253, 244); color: rgb(21, 128, 61);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true">
+                <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
+                <path d="M12 22V12"></path>
+                <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                <path d="m7.5 4.27 9 5.15"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Exports</span>
+          </button>
+        </li>
+        <li class="fw-mobile-nav-item">
+          <button type="button" class="fw-mobile-nav-btn" data-nav="contact" data-page="contact">
+            <span class="fw-mobile-nav-icon-chip" style="background: rgb(240, 253, 244); color: rgb(21, 128, 61);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true">
+                <path d="M13 2a9 9 0 0 1 9 9"></path>
+                <path d="M13 6a5 5 0 0 1 5 5"></path>
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+              </svg>
+            </span>
+            <span class="fw-mobile-nav-label">Contact Us</span>
+          </button>
+        </li>
+      </ul>
+      <div class="fw-mobile-footer">
+        <button type="button" class="fw-mobile-search" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>Search</button>
+        <button type="button" class="fw-mobile-login" data-page="login">Login</button>
+        <button type="button" class="fw-mobile-register" data-page="register">Register</button>
+      </div>
+    </div>
+    <div class="kyj kyj--home">
+      <div class="home">
+        <a class="skip-link" href="#screens">Skip to screens</a>
+        <header class="hero">
+          <svg class="hero__defs" aria-hidden="true">
+            <clipPath id="hero-glass" clipPathUnits="objectBoundingBox">
+              <path d="M0.0781 0C0.1109 0.0208 0.1316 0.0417 0.1476 0.0625C0.1635 0.0833 0.1743 0.1042 0.182 0.125C0.1897 0.1458 0.1942 0.1667 0.1956 0.1875C0.197 0.2083 0.195 0.2292 0.1907 0.25C0.1863 0.2708 0.1796 0.2917 0.171 0.3125C0.1624 0.3333 0.1515 0.3542 0.1394 0.375C0.1272 0.3958 0.1138 0.4167 0.1004 0.4375C0.0871 0.4583 0.0737 0.4792 0.0613 0.5C0.049 0.5208 0.0377 0.5417 0.0282 0.5625C0.0188 0.5833 0.0111 0.6042 0.0059 0.625C0.0007 0.6458 -0.0021 0.6667 -0.0018 0.6875C-0.0016 0.7083 0.0018 0.7292 0.0088 0.75C0.0159 0.7708 0.0268 0.7917 0.0419 0.8125C0.057 0.8333 0.0764 0.8542 0.099 0.875C0.1217 0.8958 0.1479 0.9167 0.1726 0.9375C0.1972 0.9583 0.2207 0.9792 0.2295 1H10V0z"></path>
+            </clipPath>
+            <clipPath id="hero-wave-top" clipPathUnits="objectBoundingBox">
+              <path d="M0 .1C.2.02.38.02.55.08.72.14.86.12 1 .04V1H0z"></path>
+            </clipPath>
+          </svg>
+          <svg class="hero__blobs" viewBox="0 0 300 870" aria-hidden="true">
+            <defs>
+              <linearGradient id="hero-blob-crescent" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#dbeafc"></stop>
+                <stop offset="0.4" stop-color="#e1edfd"></stop>
+                <stop offset="0.75" stop-color="#e7f0fc"></stop>
+                <stop offset="1" stop-color="#eef4fb"></stop>
+              </linearGradient>
+              <linearGradient id="hero-blob-lobe" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f0f6fc"></stop>
+                <stop offset="0.3" stop-color="#ebf3fd"></stop>
+                <stop offset="0.65" stop-color="#e7f0fd"></stop>
+                <stop offset="1" stop-color="#e6f0fc"></stop>
+              </linearGradient>
+              <linearGradient id="hero-blob-lower" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e2edfc"></stop>
+                <stop offset="0.35" stop-color="#e5effc"></stop>
+                <stop offset="0.6" stop-color="#e7f0fb"></stop>
+                <stop offset="0.8" stop-color="#edf3fc"></stop>
+                <stop offset="1" stop-color="#f3f6fb"></stop>
+              </linearGradient>
+              <linearGradient id="hero-blob-peach" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fdf3e3"></stop>
+                <stop offset="0.25" stop-color="#fef4e8"></stop>
+                <stop offset="0.5" stop-color="#fdf6ed"></stop>
+                <stop offset="0.75" stop-color="#fdf7f0"></stop>
+                <stop offset="1" stop-color="#fbf8f2"></stop>
+              </linearGradient>
+            </defs>
+            <path fill="url(#hero-blob-crescent)" d="M-10 38C-7.3 40 2.3 46.3 6 50C9.7 53.7 9.3 56.7 12 60C14.7 63.3 18.7 66.7 22 70C25.3 73.3 29 76.7 32 80C35 83.3 37.3 86.7 40 90C42.7 93.3 45 96.7 48 100C51 103.3 55.5 106.3 58 110C60.5 113.7 61.5 118.3 63 122C64.5 125.7 65.8 129 67 132C68.2 135 69.2 137 70 140C70.8 143 71 146.7 72 150C73 153.3 75 156.7 76 160C77 163.3 77.3 166.7 78 170C78.7 173.3 79.3 175.8 80 180C80.7 184.2 81.7 189.2 82 195C82.3 200.8 82.2 208.8 82 215C81.8 221.2 82.3 226.5 81 232C79.7 237.5 76.5 246.7 74 248C71.5 249.3 68.3 243 66 240C63.7 237 61.7 233.3 60 230C58.3 226.7 57.3 223.3 56 220C54.7 216.7 54 213.3 52 210C50 206.7 46.7 203.3 44 200C41.3 196.7 39 193.3 36 190C33 186.7 29.3 183.3 26 180C22.7 176.7 19.7 173.3 16 170C12.3 166.7 8.3 163.7 4 160C-0.3 156.3 -7.7 150 -10 148z"></path>
+            <path fill="url(#hero-blob-lobe)" d="M-10 272C-8.3 272.7 -3 274.7 0 276C3 277.3 4 277.7 8 280C12 282.3 20 286.7 24 290C28 293.3 29.3 296.7 32 300C34.7 303.3 36.3 306.7 40 310C43.7 313.3 50.5 316.7 54 320C57.5 323.3 59.5 326.7 61 330C62.5 333.3 62.8 336.7 63 340C63.2 343.3 62.5 346.7 62 350C61.5 353.3 60.7 356.7 60 360C59.3 363.3 58.7 366.7 58 370C57.3 373.3 57 376.7 56 380C55 383.3 53.3 386.7 52 390C50.7 393.3 49.3 396.7 48 400C46.7 403.3 45.2 406.7 44 410C42.8 413.3 42.3 416.7 41 420C39.7 423.3 37.8 426.7 36 430C34.2 433.3 32 436.7 30 440C28 443.3 26 446.7 24 450C22 453.3 20.3 456.7 18 460C15.7 463.3 13 466.7 10 470C7 473.3 3.3 477.7 0 480C-3.3 482.3 -8.3 483.3 -10 484z"></path>
+            <path fill="url(#hero-blob-lower)" d="M-10 494C-8.3 494.3 -4.7 495 0 496C4.7 497 12.7 497.7 18 500C23.3 502.3 27.7 506.7 32 510C36.3 513.3 40.3 516.7 44 520C47.7 523.3 50.7 526.7 54 530C57.3 533.3 61.3 536.7 64 540C66.7 543.3 68 546.7 70 550C72 553.3 74 556.7 76 560C78 563.3 80 566.7 82 570C84 573.3 86.3 576.7 88 580C89.7 583.3 90.7 586.7 92 590C93.3 593.3 94.7 596.7 96 600C97.3 603.3 99 606.7 100 610C101 613.3 101.3 616.7 102 620C102.7 623.3 103 626.7 104 630C105 633.3 107 636.7 108 640C109 643.3 109.3 646.7 110 650C110.7 653.3 111.3 656.7 112 660C112.7 663.3 113.3 666.7 114 670C114.7 673.3 115.7 676.7 116 680C116.3 683.3 116.2 686.7 116 690C115.8 693.3 115.7 696.7 115 700C114.3 703.3 113.3 707 112 710C110.7 713 109 718 107 718C105 718 102.8 713 100 710C97.2 707 93 703.3 90 700C87 696.7 85 693.3 82 690C79 686.7 75 683.3 72 680C69 676.7 66.7 673.3 64 670C61.3 666.7 58.7 663.3 56 660C53.3 656.7 51.3 653.3 48 650C44.7 646.7 39.7 643.3 36 640C32.3 636.7 29.3 633.3 26 630C22.7 626.7 19.7 623 16 620C12.3 617 8.3 614.3 4 612C-0.3 609.7 -7.7 607 -10 606z"></path>
+            <path fill="url(#hero-blob-peach)" d="M-10 632C-8.3 632.7 -4 634.7 0 636C4 637.3 10 637.7 14 640C18 642.3 20.7 646.7 24 650C27.3 653.3 30.7 656.7 34 660C37.3 663.3 41 666.7 44 670C47 673.3 49.3 676.7 52 680C54.7 683.3 57.7 686.7 60 690C62.3 693.3 63.7 696.7 66 700C68.3 703.3 71.7 706.7 74 710C76.3 713.3 78.3 716.7 80 720C81.7 723.3 82.3 726.7 84 730C85.7 733.3 88.3 736.7 90 740C91.7 743.3 92.3 746.7 94 750C95.7 753.3 98.3 756.7 100 760C101.7 763.3 102.7 766.7 104 770C105.3 773.3 106.7 776.7 108 780C109.3 783.3 110.3 786.7 112 790C113.7 793.3 116 796.7 118 800C120 803.3 122 806.7 124 810C126 813.3 127.7 816.7 130 820C132.3 823.3 135 826.7 138 830C141 833.3 144.5 836.7 148 840C151.5 843.3 155.2 846.7 159 850C162.8 853.3 167 856.7 171 860C175 863.3 178.8 866.7 183 870C187.2 873.3 228.2 878.3 196 880C163.8 881.7 24.3 880 -10 880z"></path>
+          </svg>
+          <div class="hero__map" aria-hidden="true">
+            <img alt="" src="assets/images/world-dots.svg">
+            <svg viewBox="0 0 565 294.4">
+              <path class="hero-map__route" d="M136 141Q312 46.7 464 118"></path>
+              <path class="hero-map__route" d="M291 49.5Q390.4 38.9 464 118"></path>
+              <path class="hero-map__route" d="M316 175Q386.1 115.6 464 118"></path>
+              <path class="hero-map__route" d="M316 175Q403.6 154.5 443 199"></path>
+              <g class="hero-map__pin" transform="translate(291 49.5)">
+                <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                <circle cy="-17.3" r="3.5"></circle>
+              </g>
+              <g class="hero-map__pin" transform="translate(136 141)">
+                <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                <circle cy="-17.3" r="3.5"></circle>
+              </g>
+              <g class="hero-map__pin" transform="translate(316 175)">
+                <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                <circle cy="-17.3" r="3.5"></circle>
+              </g>
+              <g class="hero-map__pin" transform="translate(464 118)">
+                <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                <circle cy="-17.3" r="3.5"></circle>
+              </g>
+              <g class="hero-map__pin" transform="translate(443 199)">
+                <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                <circle cy="-17.3" r="3.5"></circle>
+              </g>
+              <path class="hero-map__sparkle" d="M291 4.2q1.1 4.4 5.4 5.4-4.3 1.1-5.4 5.4-1.1-4.3-5.4-5.4 4.3-1 5.4-5.4z"></path>
+            </svg>
+          </div>
+          <div class="hero__media" aria-hidden="true">
+            <div class="hero__glass"></div>
+            <div class="hero__frame">
+              <img class="hero__photo" alt="" fetchpriority="high" src="assets/images/hero-port.jpg">
+            </div>
+          </div>
+          <div class="hero__content">
+            <p class="hero__eyebrow">
+              <span class="hero__eyebrow-dot"></span>
+              <strong>FEED MSCS LTD</strong>
+              <span>·</span>
+              <span>Export Cooperative</span>
+            </p>
+            <h1 class="hero__title"><span class="hero__title-project">PROJECT</span> <span class="hero__title-kyj">KYJ</span></h1>
+            <p class="hero__subtitle">Complete Export Support for Farmers</p>
+            <p class="hero__lead">Farmer to exporter pathway: farmer keeps ownership, FEED as <span class="nowrap">third-party</span> exporter handles buyers, compliance, logistics, realisation, major share of FOB to farmer, FIRC-verified income.</p>
+            <div class="hero__actions">
+              <a class="hero-btn hero-btn--primary" href="screens/1.html">Start the journey<span class="hero-btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" stroke-width="2" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span></a>
+              <a class="hero-btn hero-btn--secondary" href="screens/27.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.6 7.6 7.5 11 12 4.2l4.5 6.8 4.9-3.4-2 10.4H4.6L2.6 7.6z"></path><rect x="4.6" y="18.9" width="14.8" height="2.3" rx="1"></rect></svg>Jump to the finale</a>
+            </div>
+            <ul class="hero__stats">
+              <li class="hero-stat hero-stat--blue">
+                <span class="hero-stat__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <circle cx="12" cy="7.4" r="3.4"></circle>
+                    <circle cx="5.2" cy="9.2" r="2.5"></circle>
+                    <circle cx="18.8" cy="9.2" r="2.5"></circle>
+                    <path d="M5.8 19.6c0-3.5 2.8-6.2 6.2-6.2s6.2 2.7 6.2 6.2c0 .5-.4.9-.9.9H6.7c-.5 0-.9-.4-.9-.9z"></path>
+                    <path d="M4.3 13c.6 0 1.2.1 1.7.4a7.7 7.7 0 0 0-1.7 5H1.8c-.5 0-.8-.4-.8-.8C1 15.3 2.5 13 4.3 13zM19.7 13c1.8 0 3.3 2.3 3.3 4.6 0 .4-.3.8-.8.8h-2.5a7.7 7.7 0 0 0-1.7-5c.5-.3 1.1-.4 1.7-.4z"></path>
+                  </svg>
+                </span>
+                <span class="hero-stat__text">
+                  <span class="hero-stat__value">30</span>
+                  <span class="hero-stat__label">Steps</span>
+                </span>
+              </li>
+              <li class="hero-stat hero-stat--amber">
+                <span class="hero-stat__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <rect x="3.5" y="13" width="4.4" height="8" rx="1.2"></rect>
+                    <rect x="9.8" y="8.5" width="4.4" height="12.5" rx="1.2"></rect>
+                    <rect x="16.1" y="3.5" width="4.4" height="17.5" rx="1.2"></rect>
+                  </svg>
+                </span>
+                <span class="hero-stat__text">
+                  <span class="hero-stat__value">9</span>
+                  <span class="hero-stat__label">Stages</span>
+                </span>
+              </li>
+              <li class="hero-stat hero-stat--green">
+                <span class="hero-stat__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 1.8 3.8 5v6.1c0 5.1 3.5 9.8 8.2 11.1 4.7-1.3 8.2-6 8.2-11.1V5L12 1.8z"></path>
+                    <path fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="m8.2 12.1 2.7 2.7 5-5.2"></path>
+                  </svg>
+                </span>
+                <span class="hero-stat__text">
+                  <span class="hero-stat__value">7</span>
+                  <span class="hero-stat__label">Stage badges</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <main>
+          <section class="home-screens" id="screens">
+            <div class="screens-hero">
+              <div class="screens-hero__inner">
+                <svg class="screens-hero__map" viewBox="0 0 2000 754" aria-hidden="true">
+                  <image href="assets/images/americas-dots.svg" x="730" y="35" width="1250" height="560" preserveAspectRatio="none"></image>
+                  <path class="screens-hero__route" d="M917 160Q1110 98 1305 160"></path>
+                  <path class="screens-hero__route" d="M989 263Q1040 335 1124 368"></path>
+                  <path class="screens-hero__route" d="M1381 190Q1260 150 1124 264"></path>
+                  <path class="screens-hero__route" d="M1356 205Q1270 212 1247 310"></path>
+                  <path class="screens-hero__route" d="M1244 310Q1185 240 1127 266"></path>
+                  <path class="screens-hero__route" d="M1244 312Q1166 290 1129 368"></path>
+                  <g class="screens-hero__pin" transform="translate(920 151) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                  <g class="screens-hero__pin" transform="translate(986 260) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                  <g class="screens-hero__pin" transform="translate(1308 162) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                  <g class="screens-hero__pin" transform="translate(1247 311) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                  <g class="screens-hero__pin" transform="translate(1124 265) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                  <g class="screens-hero__pin" transform="translate(1127 368) scale(1.5)">
+                    <path d="M0 0C-4.6-7.8-9-12.1-9-17.3a9 9 0 0 1 18 0C9-12.1 4.6-7.8 0 0z"></path>
+                    <circle cy="-17.3" r="3.6"></circle>
+                  </g>
+                </svg>
+                <div class="screens-hero__content">
+                  <h2 class="screens-hero__title"><span class="screens-hero__title-all">All</span> <span class="screens-hero__title-stages">Stages</span></h2>
+                  <p class="screens-hero__lead">Click a file to open it. Use<span class="screens-hero__keys"><kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" stroke-width="2" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg><span class="sr-only">Left arrow</span></kbd><kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" stroke-width="2" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg><span class="sr-only">Right arrow</span></kbd></span>inside a step <br>to move through the journey.</p>
+                  <label class="search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true" stroke-width="2">
+                      <circle cx="11" cy="11" r="7"></circle>
+                      <path d="M20 20l-3.5-3.5"></path>
+                    </svg>
+                    <span class="sr-only">Search stages and screens</span>
+                    <input placeholder="Search a stage or step…   e.g. Stage 1, Farm Ready, 8a" autocomplete="off" type="search" value="">
+                  </label>
+                  <div class="filters" role="toolbar" aria-label="Filter by stage">
+                    <button type="button" class="filter filter--all is-active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="filter" data-filter="0" aria-pressed="false">Stage 0</button>
+                    <button type="button" class="filter" data-filter="1" aria-pressed="false">Stage 1</button>
+                    <button type="button" class="filter" data-filter="2" aria-pressed="false">Stage 2</button>
+                    <button type="button" class="filter" data-filter="3" aria-pressed="false">Stage 3</button>
+                    <button type="button" class="filter" data-filter="4" aria-pressed="false">Stage 4</button>
+                    <button type="button" class="filter" data-filter="5" aria-pressed="false">Stage 5</button>
+                    <button type="button" class="filter" data-filter="6" aria-pressed="false">Stage 6</button>
+                    <button type="button" class="filter" data-filter="7" aria-pressed="false">Stage 7</button>
+                    <button type="button" class="filter filter--badge" data-filter="badge" aria-pressed="false"><svg class="filter__medal" viewBox="0 0 27 37" aria-hidden="true"><defs><radialGradient id="sh-gold" cx="0.36" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffe27a"></stop><stop offset="0.55" stop-color="#fbbd1c"></stop><stop offset="1" stop-color="#ef9a06"></stop></radialGradient></defs><path d="M1.8 1h7.4l5.6 13.4H7.4z" fill="#e8343c"></path><path d="M25.2 1h-7.4l-5.6 13.4h7.4z" fill="#2457d6"></path><path d="M5.4 1h2.2l5.4 12.9h-2.2zM21.6 1h-2.2L14 13.9h2.2z" fill="#fff" opacity="0.55"></path><circle cx="13.5" cy="25.3" r="10.2" fill="url(#sh-gold)" stroke="#f0a10b" stroke-width="1.2"></circle><circle cx="13.5" cy="25.3" r="7" fill="none" stroke="#fff4c4" stroke-width="1" opacity="0.8"></circle><path d="M12.2 22.6l2-1.3v8.4" fill="none" stroke="#c46d00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>Badges</button>
+                  </div>
+                </div>
+                <svg class="journey-wheel screens-hero__wheel" viewBox="-370 -370 740 740" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="jw-petal-0" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#c92146"></stop>
+                      <stop offset="0.5" stop-color="#f23552"></stop>
+                      <stop offset="1" stop-color="#ff5a6f"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-1" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#6a2fe2"></stop>
+                      <stop offset="0.5" stop-color="#8737f8"></stop>
+                      <stop offset="1" stop-color="#a24efd"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-2" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#0a3be4"></stop>
+                      <stop offset="0.5" stop-color="#0a52f8"></stop>
+                      <stop offset="1" stop-color="#0973ff"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-3" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#029df6"></stop>
+                      <stop offset="0.5" stop-color="#10adfb"></stop>
+                      <stop offset="1" stop-color="#2bbdfd"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-4" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#009c7e"></stop>
+                      <stop offset="0.5" stop-color="#04b18a"></stop>
+                      <stop offset="1" stop-color="#18c99b"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-5" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#2cb20b"></stop>
+                      <stop offset="0.5" stop-color="#62c40a"></stop>
+                      <stop offset="1" stop-color="#b9dc2c"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-6" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#f47c02"></stop>
+                      <stop offset="0.5" stop-color="#fd9d06"></stop>
+                      <stop offset="1" stop-color="#fec52a"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-7" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#f4661a"></stop>
+                      <stop offset="0.5" stop-color="#fb8318"></stop>
+                      <stop offset="1" stop-color="#fea021"></stop>
+                    </linearGradient>
+                    <linearGradient id="jw-petal-8" gradientUnits="userSpaceOnUse" x1="-20" y1="-96" x2="-90" y2="-330">
+                      <stop offset="0" stop-color="#3d4c6b"></stop>
+                      <stop offset="0.5" stop-color="#5a6b8c"></stop>
+                      <stop offset="1" stop-color="#8a9ab8"></stop>
+                    </linearGradient>
+                    <radialGradient id="jw-silver" cx="0.38" cy="0.32" r="0.75">
+                      <stop offset="0" stop-color="#f1efec"></stop>
+                      <stop offset="0.55" stop-color="#bdb8b1"></stop>
+                      <stop offset="1" stop-color="#8f8a84"></stop>
+                    </radialGradient>
+                    <linearGradient id="jw-leaf" x1="0" y1="1" x2="1" y2="0">
+                      <stop offset="0" stop-color="#0b8fbf"></stop>
+                      <stop offset="1" stop-color="#17b29a"></stop>
+                    </linearGradient>
+                    <filter id="jw-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1d3f86" flood-opacity="0.2"></feDropShadow>
+                    </filter>
+                    <filter id="jw-hub-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#16336e" flood-opacity="0.22"></feDropShadow>
+                    </filter>
+                  </defs>
+                  <g filter="url(#jw-shadow)">
+                    <g class="journey-wheel__spin">
+                      <g class="journey-wheel__petal" style="--i: 0; --from-x: -148px; --from-y: -350px; --from-r: -50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(-3)" fill="url(#jw-petal-0)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(-3)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(-63.74767078498864 -243.57820751975316) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="13" r="8.5"></circle>
+                            <circle cx="11" cy="13" r="5"></circle>
+                            <circle cx="11" cy="13" r="1.4"></circle>
+                            <path d="M11 13 20 4M20 4l-.2-2.8M20 4l2.8.2M18 6l-.2-2.6M18 6l2.6.2"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="-88.74767078498864" y="-211.32820751975316" text-anchor="middle">00</text>
+                          <text class="journey-wheel__label" x="-66.74767078498864" y="-188.77820751975315" text-anchor="middle">EPM &amp;</text>
+                          <text class="journey-wheel__label" x="-66.74767078498864" y="-170.27820751975315" text-anchor="middle">Onboarding</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 1; --from-x: 111px; --from-y: -363px; --from-r: 50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(37)" fill="url(#jw-petal-1)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(37)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(83.915024177837 -229.17171258642608) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22V10.5"></path>
+                            <path d="M12 12.5c-3-2.2-3.4-6.4 0-10 3.4 3.6 3 7.8 0 10zM12 12.5V6.5"></path>
+                            <path d="M12 18.5c-1.1-2.9-3.7-4.4-7.6-4.3.3 3.6 3.3 5.2 7.6 4.3zM12 18.5c1.1-2.9 3.7-4.4 7.6-4.3-.3 3.6-3.3 5.2-7.6 4.3z"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="62.915024177837" y="-196.92171258642608" text-anchor="middle">01</text>
+                          <text class="journey-wheel__label" x="80.915024177837" y="-174.87171258642607" text-anchor="middle">Farm Ready</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 2; --from-x: 319px; --from-y: -207px; --from-r: -50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(77)" fill="url(#jw-petal-2)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(77)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(193.7166800575282 -130.30585756175242) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13.5 2H6.2a1.7 1.7 0 0 0-1.7 1.7v16.6A1.7 1.7 0 0 0 6.2 22H11M13.5 2v4.5H18V10M13.5 2 18 6.5"></path>
+                            <path d="M7.5 9h4M7.5 12.5h5M7.5 16h3"></path>
+                            <path d="m17.5 12.2 4 1.6v3.1c0 2.6-1.7 4.3-4 5.1-2.3-.8-4-2.5-4-5.1v-3.1z"></path>
+                            <path d="m15.8 17.1 1.2 1.2 2.3-2.4"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="170.7166800575282" y="-98.05585756175242" text-anchor="middle">02</text>
+                          <text class="journey-wheel__label" x="190.7166800575282" y="-75.50585756175242" text-anchor="middle">Registered</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 3; --from-x: 377px; --from-y: 46px; --from-r: 50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(117)" fill="url(#jw-petal-3)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(117)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(214.27988175850203 16.008925216635973) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.5 3 6.8v10.4l9 4.3 9-4.3V6.8z"></path>
+                            <path d="m3 6.8 9 4.3 9-4.3M12 11.1v10.4M7.5 4.6l9 4.4v3.4"></path>
+                            <path d="m14.6 16.8 1.6-.8M14.6 19l3-1.4"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="191.27988175850203" y="48.25892521663597" text-anchor="middle">03</text>
+                          <text class="journey-wheel__label" x="211.27988175850203" y="69.80892521663598" text-anchor="middle">Packhouse</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 4; --from-x: 259px; --from-y: 278px; --from-r: -50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(157)" fill="url(#jw-petal-4)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(157)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(135.98287867034222 141.31032277905192) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 2.5h6M10 2.5v6.2L4.6 18.4a2 2 0 0 0 1.8 3.1h11.2a2 2 0 0 0 1.8-3.1L14 8.7V2.5"></path>
+                            <path d="M6.8 15h10.4M10 18.2h.01M13.6 17.8h.01"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="114.98287867034222" y="173.56032277905192" text-anchor="middle">04</text>
+                          <text class="journey-wheel__label" x="132.98287867034222" y="195.11032277905193" text-anchor="middle">Quality</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 5; --from-x: 20px; --from-y: 379px; --from-r: 50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(197)" fill="url(#jw-petal-5)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(197)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(-4.5382912877401935 186.96841863612468) scale(1.6666666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9.5"></circle>
+                            <path d="M12 2.5c-2.8 2.6-4.2 5.8-4.2 9.5s1.4 6.9 4.2 9.5c2.8-2.6 4.2-5.8 4.2-9.5S14.8 5.1 12 2.5zM12 2.5v19"></path>
+                            <path d="M2.5 12h19M3.8 7.2c4.9 1.2 11.5 1.2 16.4 0M3.8 16.8c4.9-1.2 11.5-1.2 16.4 0"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="-28.538291287740194" y="219.21841863612468" text-anchor="middle">05</text>
+                          <text class="journey-wheel__label" x="-7.538291287740194" y="240.7684186361247" text-anchor="middle">Buyer</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 6; --from-x: -229px; --from-y: 303px; --from-r: -50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(237)" fill="url(#jw-petal-6)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(237)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(-144.53221097351337 128.61928230311716) scale(1.9166666666666667)" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13.5 16.5v-10h-11v10h2M8.5 16.5h6M13.5 9.5h4l3 3.5v3.5h-2"></path>
+                            <circle cx="6.5" cy="16.5" r="2"></circle>
+                            <circle cx="16.5" cy="16.5" r="2"></circle>
+                          </g>
+                          <text class="journey-wheel__num" x="-169.03221097351337" y="163.86928230311716" text-anchor="middle">06</text>
+                          <text class="journey-wheel__label" x="-144.53221097351337" y="181.66928230311717" text-anchor="middle">Sample</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 7; --from-x: -370px; --from-y: 85px; --from-r: 50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(277)" fill="url(#jw-petal-7)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(277)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(-220.89790284817923 -8.838610192625971) scale(2.5)" fill="none" stroke="#fff" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1.5 14.5h21l-2.4 4.9a1 1 0 0 1-.9.6H4.8a1 1 0 0 1-.9-.6z"></path>
+                            <path d="M5 14.5V11.2h14v3.3M8 11.2V8.4h8v2.8M10.4 8.4V6h3.2v2.4"></path>
+                            <path d="M7.5 12.9h1.2M11.4 12.9h1.2M15.3 12.9h1.2M4.5 17.2h15"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="-245.39790284817923" y="33.41138980737403" text-anchor="middle">07</text>
+                          <text class="journey-wheel__label" x="-213.8979028481792" y="56.96138980737403" text-anchor="middle">FIRC ★</text>
+                        </g>
+                      </g>
+                      <g class="journey-wheel__petal" style="--i: 8; --from-x: -339px; --from-y: -173px; --from-r: -50deg;">
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(317)" fill="url(#jw-petal-8)"></path>
+                        <path d="M20.0 -93.9C20.5 -101.3 23.3 -123.9 23.1 -138.1C22.9 -152.3 20.7 -165.4 18.8 -179.0C16.9 -192.6 13.9 -206.2 11.5 -219.7C9.1 -233.2 6.2 -246.6 4.5 -260.0C2.9 -273.3 2.3 -288.2 1.6 -300.0C0.8 -311.8 0.3 -325.8 0.0 -331.0C-1.6 -330.6 -5.9 -329.8 -9.9 -328.9C-13.9 -327.9 -18.7 -326.7 -24.0 -325.1C-29.3 -323.5 -35.4 -321.7 -41.6 -319.3C-47.9 -316.9 -54.8 -314.2 -61.6 -311.0C-68.5 -307.7 -75.3 -304.3 -82.7 -299.8C-90.1 -295.3 -98.6 -289.9 -106.1 -283.8C-113.7 -277.8 -121.6 -270.7 -128.2 -263.5C-134.7 -256.3 -140.9 -248.1 -145.4 -240.5C-149.9 -232.8 -153.5 -224.1 -155.0 -217.4C-156.6 -210.6 -156.3 -204.8 -154.9 -200.0C-153.6 -195.2 -150.7 -192.5 -147.0 -188.5C-143.2 -184.4 -140.1 -182.2 -132.4 -175.7C-124.7 -169.2 -110.9 -158.4 -100.7 -149.2C-90.4 -140.0 -80.3 -131.4 -71.1 -120.6C-61.8 -109.9 -49.4 -90.7 -45.1 -84.8A96 96 0 0 1 20.0 -93.9Z" transform="rotate(317)" fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round"></path>
+                        <g class="journey-wheel__upright">
+                          <g transform="translate(-182.37838876978805 -154.5350610743722) scale(1.85)">
+                            <path d="M6.4 1.5h4.4l3 7.6H9.4z" fill="#e5484d" stroke="#fff" stroke-width="1.1" stroke-linejoin="round"></path>
+                            <path d="M17.6 1.5h-4.4l-3 7.6h4.4z" fill="#2f9e5b" stroke="#fff" stroke-width="1.1" stroke-linejoin="round"></path>
+                            <circle cx="12" cy="15.6" r="6.6" fill="url(#jw-silver)" stroke="#fff" stroke-width="1.5"></circle>
+                            <path d="M12 12.4a1 1 0 1 0 0 .1M10.6 19.2l1.4-2.6 1.4 2.6M12 16.6v-2.8l-1.7 1.4M12 13.8l1.6 1.2" fill="none" stroke="#7a6b5d" stroke-width=".95" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </g>
+                          <text class="journey-wheel__num" x="-200.67838876978806" y="-120.36256107437222" text-anchor="middle">08</text>
+                          <text class="journey-wheel__label" x="-183.17838876978806" y="-95.81256107437223" text-anchor="middle">KYJ-1</text>
+                          <text class="journey-wheel__label" x="-183.17838876978806" y="-77.31256107437223" text-anchor="middle">Certified</text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                  <circle r="95" fill="#fff" stroke="#e4ebf6" stroke-width="2" filter="url(#jw-hub-shadow)"></circle>
+                  <g transform="translate(-19.5 -74) scale(0.98)">
+                    <path d="M18.5 38c-.4-7.6.6-13.7 3-19" fill="none" stroke="#0c83c8" stroke-width="3.2" stroke-linecap="round"></path>
+                    <path d="M21.2 19.4C20 10.6 25 3.4 37 1.2c1.1 10.6-4.5 17.4-15.8 18.2z" fill="url(#jw-leaf)"></path>
+                    <path d="M23.4 16.6c3-4.6 6.5-8.4 10.6-11.4" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round"></path>
+                    <path d="M18.6 28.2C12.4 29.6 5 26.8 1.4 18c8.4-2.4 14.8 1.6 17.2 10.2z" fill="#1d84d6"></path>
+                    <path d="M16.4 26.2c-3.2-2.8-6.6-4.8-10.8-6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"></path>
+                    <path d="M20.4 30c3.4-4.4 8.6-5.6 13.8-3.6-3.2 4.6-8.4 5.8-13.8 3.6z" fill="#1d84d6"></path>
+                  </g>
+                  <text class="journey-wheel__kyj" y="9" text-anchor="middle">KYJ</text>
+                  <text class="journey-wheel__journey" y="38" text-anchor="middle">Journey</text>
+                  <text class="journey-wheel__stages" y="62" text-anchor="middle">9 Stages</text>
+                </svg>
+              </div>
+            </div>
+            <ol class="journey" role="list" aria-label="Export journey stages">
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="0" id="stage-0" aria-labelledby="stage-0-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 00</p>
+                  <h3 class="journey-stage__title" id="stage-0-title">EPM &amp; <span class="journey-stage__accent">Onboarding</span></h3>
+                  <p class="journey-stage__summary">Get started with EPM and complete the onboarding process for export readiness.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="4">
+                    <li class="journey-card" data-screen="1">
+                      <a class="journey-card__link" href="screens/1.html">
+                        <span class="journey-card__num">01</span>
+                        <span class="journey-card__title">EPM QR Landing</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="2">
+                      <a class="journey-card__link" href="screens/2.html">
+                        <span class="journey-card__num">02</span>
+                        <span class="journey-card__title">FEED CARD Basic Issued</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="3">
+                      <a class="journey-card__link" href="screens/3.html">
+                        <span class="journey-card__num">03</span>
+                        <span class="journey-card__title">Farmer Consent Agreement</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="4">
+                      <a class="journey-card__link" href="screens/4.html">
+                        <span class="journey-card__num">04</span>
+                        <span class="journey-card__title">Export Readiness Score</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-1">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="1" id="stage-1" aria-labelledby="stage-1-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 01</p>
+                  <h3 class="journey-stage__title" id="stage-1-title">Farm <span class="journey-stage__accent">Ready</span></h3>
+                  <p class="journey-stage__summary">Prepare your farm with registrations, compliance and essential records.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="5">
+                    <li class="journey-card" data-screen="5">
+                      <a class="journey-card__link" href="screens/5.html">
+                        <span class="journey-card__num">05</span>
+                        <span class="journey-card__title">Farm Plot GPS Registration</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="6">
+                      <a class="journey-card__link" href="screens/6.html">
+                        <span class="journey-card__num">06</span>
+                        <span class="journey-card__title">GAP Activity Log</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="7">
+                      <a class="journey-card__link" href="screens/7.html">
+                        <span class="journey-card__num">07</span>
+                        <span class="journey-card__title">EU MRL Alert</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="8">
+                      <a class="journey-card__link" href="screens/8.html">
+                        <span class="journey-card__num">08</span>
+                        <span class="journey-card__title">Soil Health Card Upload</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="8a">
+                      <a class="journey-card__link" href="screens/8a.html">
+                        <span class="journey-card__num">8a</span>
+                        <span class="journey-card__title">Stage 1 Badge · Polam Siddham</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-2">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="2" id="stage-2" aria-labelledby="stage-2-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 02</p>
+                  <h3 class="journey-stage__title" id="stage-2-title">
+                    <span class="journey-stage__accent">Registered</span>
+                  </h3>
+                  <p class="journey-stage__summary">Complete essential registrations to become an eligible participant.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="4">
+                    <li class="journey-card" data-screen="9">
+                      <a class="journey-card__link" href="screens/9.html">
+                        <span class="journey-card__num">09</span>
+                        <span class="journey-card__title">IEC Registration</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="10">
+                      <a class="journey-card__link" href="screens/10.html">
+                        <span class="journey-card__num">10</span>
+                        <span class="journey-card__title">APEDA RCMC</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="11">
+                      <a class="journey-card__link" href="screens/11.html">
+                        <span class="journey-card__num">11</span>
+                        <span class="journey-card__title">FSSAI Stage 2 Gate</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="11a">
+                      <a class="journey-card__link" href="screens/11a.html">
+                        <span class="journey-card__num">11a</span>
+                        <span class="journey-card__title">Stage 2 Badge · Namodu</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-3">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="3" id="stage-3" aria-labelledby="stage-3-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 03</p>
+                  <h3 class="journey-stage__title" id="stage-3-title">
+                    <span class="journey-stage__accent">Packhouse</span>
+                  </h3>
+                  <p class="journey-stage__summary">Set up and manage packhouse operations for quality and compliance.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="3">
+                    <li class="journey-card" data-screen="12">
+                      <a class="journey-card__link" href="screens/12.html">
+                        <span class="journey-card__num">12</span>
+                        <span class="journey-card__title">Packhouse Locator</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="13">
+                      <a class="journey-card__link" href="screens/13.html">
+                        <span class="journey-card__num">13</span>
+                        <span class="journey-card__title">Packing &amp; Labelling</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="13a">
+                      <a class="journey-card__link" href="screens/13a.html">
+                        <span class="journey-card__num">13a</span>
+                        <span class="journey-card__title">Stage 3 Badge · PackHouse</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-4">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="4" id="stage-4" aria-labelledby="stage-4-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 04</p>
+                  <h3 class="journey-stage__title" id="stage-4-title">
+                    <span class="journey-stage__accent">Quality</span>
+                  </h3>
+                  <p class="journey-stage__summary">Ensure quality through certifications, testing and compliance support.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="3">
+                    <li class="journey-card" data-screen="14">
+                      <a class="journey-card__link" href="screens/14.html">
+                        <span class="journey-card__num">14</span>
+                        <span class="journey-card__title">NABL Lab Booking</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="15">
+                      <a class="journey-card__link" href="screens/15.html">
+                        <span class="journey-card__num">15</span>
+                        <span class="journey-card__title">PHRT Sample Result</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="16">
+                      <a class="journey-card__link" href="screens/16.html">
+                        <span class="journey-card__num">16</span>
+                        <span class="journey-card__title">COA · Phytosanitary · Stage 4 Badge</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-5">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="5" id="stage-5" aria-labelledby="stage-5-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 05</p>
+                  <h3 class="journey-stage__title" id="stage-5-title">
+                    <span class="journey-stage__accent">Buyer</span>
+                  </h3>
+                  <p class="journey-stage__summary">Connect with global buyers and participate in trade opportunities.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="3">
+                    <li class="journey-card" data-screen="17">
+                      <a class="journey-card__link" href="screens/17.html">
+                        <span class="journey-card__num">17</span>
+                        <span class="journey-card__title">VISWARUPAM Buyer Match</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="s18">
+                      <a class="journey-card__link" href="screens/s18.html">
+                        <span class="journey-card__num">18</span>
+                        <span class="journey-card__title">BSM Scheduler</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="s19">
+                      <a class="journey-card__link" href="screens/s19.html">
+                        <span class="journey-card__num">19</span>
+                        <span class="journey-card__title">MoA Signing · Stage 5 Badge</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-6">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="6" id="stage-6" aria-labelledby="stage-6-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 06</p>
+                  <h3 class="journey-stage__title" id="stage-6-title">
+                    <span class="journey-stage__accent">Sample</span>
+                  </h3>
+                  <p class="journey-stage__summary">Grade, trace and dispatch the export sample to your buyer.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="4">
+                    <li class="journey-card" data-screen="s20">
+                      <a class="journey-card__link" href="screens/s20.html">
+                        <span class="journey-card__num">20</span>
+                        <span class="journey-card__title">CFC Intake &amp; Grading</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="s21">
+                      <a class="journey-card__link" href="screens/s21.html">
+                        <span class="journey-card__num">21</span>
+                        <span class="journey-card__title">TraceX QR Creation</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="22">
+                      <a class="journey-card__link" href="screens/22.html">
+                        <span class="journey-card__num">22</span>
+                        <span class="journey-card__title">Sample Dispatch</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="22a">
+                      <a class="journey-card__link" href="screens/22a.html">
+                        <span class="journey-card__num">22a</span>
+                        <span class="journey-card__title">Stage 6 Badge · Namuna</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-7">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="7" id="stage-7" aria-labelledby="stage-7-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 07</p>
+                  <h3 class="journey-stage__title" id="stage-7-title">FIRC <span class="journey-stage__accent">★</span></h3>
+                  <p class="journey-stage__summary">Clear customs, ship the consignment and record the export payment.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="3">
+                    <li class="journey-card" data-screen="23">
+                      <a class="journey-card__link" href="screens/23.html">
+                        <span class="journey-card__num">23</span>
+                        <span class="journey-card__title">CHA Assignment · 12-Doc Checklist</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="24">
+                      <a class="journey-card__link" href="screens/24.html">
+                        <span class="journey-card__num">24</span>
+                        <span class="journey-card__title">Shipping Bill · ICEGATE</span>
+                      </a>
+                    </li>
+                    <li class="journey-card" data-screen="25">
+                      <a class="journey-card__link" href="screens/25.html">
+                        <span class="journey-card__num">25</span>
+                        <span class="journey-card__title">FIRC Upload · Two-Track</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#stage-8">Next Stage</a>
+                  </div>
+                </section>
+              </li>
+              <li class="journey__item">
+                <section class="journey-stage" data-stage="8" id="stage-8" aria-labelledby="stage-8-title">
+                  <p class="journey-stage__pill"><span class="journey-stage__dot" aria-hidden="true"></span>Stage 08</p>
+                  <h3 class="journey-stage__title" id="stage-8-title">KYJ-1 <span class="journey-stage__accent">Certified</span></h3>
+                  <p class="journey-stage__summary">Complete the journey and earn KYJ-1 Platinum certification.</p>
+                  <ul class="journey-stage__cards" role="list" data-count="1">
+                    <li class="journey-card" data-screen="27">
+                      <a class="journey-card__link" href="screens/27.html">
+                        <span class="journey-card__num">27</span>
+                        <span class="journey-card__title">KYJ-1 Platinum Certification</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="journey-stage__actions">
+                    <a class="journey-btn" href="#screens">Back to Top</a>
+                  </div>
+                </section>
+              </li>
+            </ol>
+            <div class="home-container" hidden="">
+              <div class="empty">
+                <span class="empty__icon">🔍</span>
+                <p>
+                  <strong>No screens match your search.</strong>
+                </p>
+                <p>Try a stage like <em>Stage 1</em> or <em>Farm Ready</em>, a step like <em>EPM QR Landing</em>, or a file number like <span class="mono">13a</span>.</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer class="new-footer">
+      <div class="footer-premium-bg" aria-hidden="true">
+        <div class="f-mesh-1"></div>
+        <div class="f-mesh-2"></div>
+        <div class="f-mesh-3"></div>
+        <div class="f-ambient-glow"></div>
+        <div class="f-newsletter-glow"></div>
+        <div class="f-world-map"></div>
+        <div class="f-planet-green">
+          <div class="f-planet-core"></div>
+          <div class="f-planet-ring f-planet-ring-1"></div>
+          <div class="f-planet-ring f-planet-ring-2"></div>
+        </div>
+        <div class="f-planet-orange"></div>
+        <svg class="f-leaf-tl" viewBox="0 0 100 100">
+          <path d="M0,0 C50,0 100,50 100,100 C50,100 0,50 0,0 Z" fill="rgba(34,197,94,0.04)"></path>
+        </svg>
+        <svg class="f-leaf-br" viewBox="0 0 100 100">
+          <path d="M100,100 C50,100 0,50 0,0 C50,0 100,50 100,100 Z" fill="rgba(34,197,94,0.04)"></path>
+        </svg>
+        <div class="f-stars">
+          <div class="f-star f-star-1"></div>
+          <div class="f-star f-star-2"></div>
+          <div class="f-star f-star-3"></div>
+          <div class="f-star f-star-4"></div>
+          <div class="f-star f-star-5"></div>
+          <div class="f-star f-star-6"></div>
+          <div class="f-star f-star-7"></div>
+          <div class="f-star f-star-8"></div>
+        </div>
+        <div class="f-vignette"></div>
+        <svg width="0" height="0">
+          <defs>
+            <linearGradient id="f-wave-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563eb"></stop>
+              <stop offset="100%" stop-color="#16a34a"></stop>
+            </linearGradient>
+            <linearGradient id="f-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="transparent"></stop>
+              <stop offset="50%" stop-color="#38bdf8"></stop>
+              <stop offset="100%" stop-color="transparent"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="footer-container">
+        <div class="footer-top-banner">
+          <div class="banner-left">
+            <div class="banner-logo-placeholder">
+              <img alt="FEED Logo" class="banner-logo" src="assets/images/feed/logo.avif">
+            </div>
+            <div class="banner-text-content">
+              <h2>Together We Empower.<br><span class="text-green">Together We Grow.</span></h2>
+              <p>FEED is a multi-state cooperative society working for the uplift of exports from all corners of <span class="text-green">India</span>.</p>
+            </div>
+          </div>
+          <div class="banner-right">
+            <div class="subscribe-card">
+              <h3>Stay updated with<br><span class="text-green">latest insights</span> &amp; opportunities</h3>
+              <div class="subscribe-input-group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail input-icon" aria-hidden="true">
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                </svg>
+                <input placeholder="Enter your email address" type="email">
+                <button class="subscribe-btn">Subscribe <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg></button>
+              </div>
+              <p class="privacy-note"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links-section">
+          <div class="footer-column">
+            <h4 class="column-title"><div class="icon-bg green-bg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div> Quick Links</h4>
+            <ul class="footer-list">
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Sitemap</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Pricing</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Join us</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Contact us</a>
+              </li>
+            </ul>
+            <div class="info-card light-green-card">
+              <p>Empowering<br>Communities.<br>Strengthening<br>Exports.</p>
+              <div class="card-icon-placeholder globe-sprout"></div>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4 class="column-title"><div class="icon-bg purple-bg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></div> Services</h4>
+            <ul class="footer-list">
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Fpo</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Farm</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Business</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Products</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Exports</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Market</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Education</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> My Tools</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="column-title"><div class="icon-bg blue-bg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-column" aria-hidden="true"><path d="M5 21v-6"></path><path d="M12 21V3"></path><path d="M19 21V9"></path></svg></div> FEED Insights</h4>
+            <ul class="footer-list">
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Suggestions</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Sample works</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Queries</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Complaints</a>
+              </li>
+            </ul>
+            <div class="info-card light-blue-card">
+              <div class="card-content-flex">
+                <div class="doc-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text" aria-hidden="true">
+                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                    <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                    <path d="M10 9H8"></path>
+                    <path d="M16 13H8"></path>
+                    <path d="M16 17H8"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p>Insights that inspire.<br>Knowledge that<br>creates impact.</p>
+                </div>
+              </div>
+              <a href="#" class="explore-link">Explore Insights →</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4 class="column-title"><div class="icon-bg orange-bg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div> Help</h4>
+            <ul class="footer-list">
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> FAQs</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Reporting</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Documentation</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Support Policy</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Terms &amp; conditions</a>
+              </li>
+              <li>
+                <a href="#" class="text-orange"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg> Disclaimer</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4 class="column-title"><div class="icon-bg pink-bg"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div> Connect with us</h4>
+            <p class="connect-text">Stay connected with our latest insights, services, and opportunities.</p>
+            <div class="social-icons-row">
+              <a href="#" class="social-circle fb">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-circle tw">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-circle li">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-circle ig">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-circle yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="info-card green-gradient-card">
+              <p>
+                <strong>Let's build a<br>stronger tomorrow,<br>together.</strong>
+              </p>
+              <button class="join-btn">Join FEED Community →</button>
+              <div class="card-bg-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-container">
+          <div class="bottom-left">
+            <img alt="Company Logo" class="bottom-logo" src="assets/images/feed/logo.avif">
+            <div class="copyright-text">
+              <p>© 2026 FEED Organization.</p>
+              <p>All rights reserved.</p>
+            </div>
+          </div>
+          <div class="bottom-right">
+            <a href="#" class="bottom-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg> Privacy Policy</a>
+            <span class="divider">|</span>
+            <a href="#" class="bottom-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg> Terms &amp; Conditions</a>
+            <span class="divider">|</span>
+            <a href="#" class="bottom-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Disclaimer</a>
+            <button class="scroll-top-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f2b3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up" aria-hidden="true">
+                <path d="m5 12 7-7 7 7"></path>
+                <path d="M12 19V5"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

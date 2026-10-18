@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Stage pages theme
+   Scoped to the screen shell (.app, rendered by AppShell.jsx). The home page
+   never renders .app, so it keeps the global tokens exactly as they are.
+
+   Re-maps the global tokens (base/tokens.css) to the home page's visual
+   language: navy ink, cool light surfaces, Google Sans Flex, and one colour
+   per stage — the same nine colours as the home page's stage panels and
+   journey wheel. Components and page sheets read these tokens, so the whole
+   screen follows without per-component overrides.
+   ========================================================================== */
+
+/* Body behind the shell (overscroll, short pages) — never matches on home */
+body:has(.app) {
+  background: #f3f6fb;
+}
+
+.app {
+  /* ---- Neutrals: cool and navy-tinted (home ink #102c5c, text #6b7688) */
+  --ink-950: #0a1d40;
+  --ink-900: #102c5c;
+  --ink-800: #1d3a68;
+  --ink-700: #33486f;
+  --ink-600: #4f5f7d;
+  --ink-500: #6b7688;
+  --ink-400: #949fb2;
+  --ink-300: #c3ccd9;
+  --ink-200: #dfe6ef;
+  --ink-150: #e8edf4;
+  --ink-100: #eff3f8;
+  --ink-50: #f6f8fc;
+
+  --canvas: #f3f6fb;
+  --surface: #ffffff;
+  --line: #e4eaf2;
+  --line-strong: #d3dce8;
+
+  /* ---- Type: Google Sans Flex, as on the home page -------------------- */
+  --font-sans: "Google Sans Flex", "Inter", "Noto Sans Telugu", "Nirmala UI", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Google Sans Flex", "Plus Jakarta Sans", "Noto Sans Telugu", "Nirmala UI", system-ui, sans-serif;
+
+  /* ---- Elevation: soft, navy-tinted ----------------------------------- */
+  --shadow-xs: 0 1px 2px rgb(16 44 92 / 0.05);
+  --shadow-sm: 0 1px 2px rgb(16 44 92 / 0.04), 0 6px 16px -10px rgb(16 44 92 / 0.16);
+  --shadow-md: 0 2px 6px rgb(16 44 92 / 0.05), 0 18px 38px -20px rgb(16 44 92 / 0.26);
+  --shadow-lg: 0 8px 22px rgb(16 44 92 / 0.08), 0 30px 60px -26px rgb(16 44 92 / 0.32);
+
+  --r-lg: 16px;
+  --r-xl: 20px;
+
+  /* ---- Brand green, freshened to sit with the stage colours ----------- */
+  --brand-950: #0b2a1a;
+  --brand-900: #10402a;
+  --brand-800: #16583a;
+  --brand-700: #1d7a4c;
+  --brand-600: #23905a;
+  --brand-500: #2fae6c;
+  --brand-200: #c4ead5;
+  --brand-100: #e6f6ed;
+  --brand-50: #f2fbf6;
+
+  /* :root computes these from the accent; re-declare them here so they
+     follow the stage accent set on this element */
+  --tone: var(--accent);
+  --tone-ink: var(--accent-ink);
+  --tone-soft: var(--accent-soft);
+  --tone-line: var(--accent-line);
+  --hero-bg: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-via) 55%, var(--hero-to) 100%);
+  --shadow-accent: 0 10px 24px -12px var(--accent-glow);
+
+  font-family: var(--font-sans);
+  color: var(--ink-800);
+}
+
+/* ---- Stage colours ------------------------------------------------------
+   --stage / --stage-ink: the vivid colour and its text shade, exactly as on
+   the home page. Any element in the shell carrying data-stage gets its own
+   pair (the sidebar's stage groups use this). */
+
+.app[data-stage="0"], .app [data-stage="0"] { --stage: #f23552; --stage-ink: #a8193c; }
+.app[data-stage="1"], .app [data-stage="1"] { --stage: #8737f8; --stage-ink: #5b25c9; }
+.app[data-stage="2"], .app [data-stage="2"] { --stage: #0a52f8; --stage-ink: #0a3fc4; }
+.app[data-stage="3"], .app [data-stage="3"] { --stage: #10adfb; --stage-ink: #04689f; }
+.app[data-stage="4"], .app [data-stage="4"] { --stage: #04b18a; --stage-ink: #00745d; }
+.app[data-stage="5"], .app [data-stage="5"] { --stage: #62c40a; --stage-ink: #2a7a0b; }
+.app[data-stage="6"], .app [data-stage="6"] { --stage: #fd9d06; --stage-ink: #a35a00; }
+.app[data-stage="7"], .app [data-stage="7"] { --stage: #fb8318; --stage-ink: #b9440a; }
+.app[data-stage="8"], .app [data-stage="8"] { --stage: #5a6b8c; --stage-ink: #4b5c7e; }
+
+/* ---- Page accent per stage ----------------------------------------------
+   Replaces each page sheet's own :root accent, so every screen in a stage
+   shares that stage's colour. --accent carries white text (≥ 4.5 : 1). */
+
+.app[data-stage="0"] {
+  --accent: #c8213f;
+  --accent-2: #e03552;
+  --accent-ink: #8f1631;
+  --accent-soft: #fdeff2;
+  --accent-line: #f7cfd7;
+  --accent-glow: rgb(200 33 63 / 0.3);
+  --hero-from: #5c0d1f;
+  --hero-via: #a8193c;
+  --hero-to: #e03552;
+}
+
+.app[data-stage="1"] {
+  --accent: #6a2fe2;
+  --accent-2: #8541f5;
+  --accent-ink: #4a1fa8;
+  --accent-soft: #f3eefe;
+  --accent-line: #ddd0fb;
+  --accent-glow: rgb(106 47 226 / 0.3);
+  --hero-from: #2c1170;
+  --hero-via: #5b25c9;
+  --hero-to: #8541f5;
+}
+
+.app[data-stage="2"] {
+  --accent: #0a47d8;
+  --accent-2: #2563f6;
+  --accent-ink: #0a3394;
+  --accent-soft: #edf3fe;
+  --accent-line: #cadafc;
+  --accent-glow: rgb(10 71 216 / 0.3);
+  --hero-from: #071f66;
+  --hero-via: #0a3fc4;
+  --hero-to: #2563f6;
+}
+
+.app[data-stage="3"] {
+  --accent: #0670ad;
+  --accent-2: #0a8fd2;
+  --accent-ink: #045683;
+  --accent-soft: #eaf6fd;
+  --accent-line: #c2e5f8;
+  --accent-glow: rgb(6 112 173 / 0.3);
+  --hero-from: #033a5a;
+  --hero-via: #04689f;
+  --hero-to: #10a3ec;
+}
+
+.app[data-stage="4"] {
+  --accent: #00806a;
+  --accent-2: #03a07f;
+  --accent-ink: #005c4b;
+  --accent-soft: #e8f7f2;
+  --accent-line: #bfe8dc;
+  --accent-glow: rgb(0 128 106 / 0.3);
+  --hero-from: #003b31;
+  --hero-via: #00745d;
+  --hero-to: #04b18a;
+}
+
+.app[data-stage="5"] {
+  --accent: #2b7f0d;
+  --accent-2: #3f9c12;
+  --accent-ink: #1f5f08;
+  --accent-soft: #eef8e6;
+  --accent-line: #d1ecbd;
+  --accent-glow: rgb(43 127 13 / 0.3);
+  --hero-from: #133f05;
+  --hero-via: #2a7a0b;
+  --hero-to: #55b80c;
+}
+
+.app[data-stage="6"] {
+  --accent: #ad5c00;
+  --accent-2: #cc7300;
+  --accent-ink: #844600;
+  --accent-soft: #fff5e3;
+  --accent-line: #fadfaf;
+  --accent-glow: rgb(173 92 0 / 0.3);
+  --hero-from: #4d2900;
+  --hero-via: #a35a00;
+  --hero-to: #f29200;
+}
+
+.app[data-stage="7"] {
+  --accent: #c24c0c;
+  --accent-2: #df6612;
+  --accent-ink: #933a07;
+  --accent-soft: #fff1e7;
+  --accent-line: #fbd3b6;
+  --accent-glow: rgb(194 76 12 / 0.3);
+  --hero-from: #561f03;
+  --hero-via: #b9440a;
+  --hero-to: #f47a16;
+}
+
+.app[data-stage="8"] {
+  --accent: #3f4f70;
+  --accent-2: #56688a;
+  --accent-ink: #2c3a57;
+  --accent-soft: #eef1f6;
+  --accent-line: #d3dae6;
+  --accent-glow: rgb(63 79 112 / 0.3);
+  --hero-from: #1c263b;
+  --hero-via: #3f4f70;
+  --hero-to: #7686a6;
+}

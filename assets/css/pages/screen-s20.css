@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Screen s20 — CFC Intake & Grading (VA-01) · Stage 6 · 1 of 3
+   ========================================================================== */
+
+/* ---- Truck arrival (hero visual) -------------------------------------- */
+
+.arrival {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 440px;
+  padding: 14px 20px 14px 14px;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 18px 36px -20px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.arrival__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  font-size: 28px;
+  background: linear-gradient(135deg, #ffcc80, #ffa726);
+  box-shadow: 0 10px 22px -10px rgba(255, 167, 38, 0.8);
+}
+
+.arrival__body {
+  min-width: 0;
+}
+
+.arrival__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 750;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.arrival__meta {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Cards fill their row so each step pair lines up */
+.block > .card {
+  flex: 1;
+}
+
+/* ---- Step 1 · QR scan ------------------------------------------------- */
+
+.scan-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background:
+    radial-gradient(240px 140px at 100% 0%, rgba(141, 110, 99, 0.12), transparent 70%),
+    var(--surface);
+}
+
+.scan-card__icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  font-size: 34px;
+  background: linear-gradient(135deg, #5d4037, #8d6e63);
+  box-shadow: 0 14px 28px -14px rgba(93, 64, 55, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.scan-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.scan-card__name {
+  margin-top: 4px;
+  font-size: var(--fs-lg);
+  font-weight: 750;
+  line-height: 1.3;
+  color: var(--ink-900);
+}
+
+.scan-card__id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--ink-500);
+}
+
+.scan-card__plot {
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--accent);
+}
+
+/* ---- Step 3 · Weight -------------------------------------------------- */
+
+.weight-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.weights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.weights .stat {
+  padding: 16px 10px 14px;
+}
+
+.weights .stat__value {
+  font-size: var(--fs-2xl);
+}
+
+.weight-net {
+  border-width: 1.5px;
+  border-color: #81c784;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.weight-ok {
+  align-self: center;
+  margin-top: auto;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  text-align: center;
+  color: var(--success-ink);
+  background: var(--success-soft);
+  border: 1px solid var(--success-line);
+}
+
+/* ---- Step 4 · Grading ------------------------------------------------- */
+
+.grade-letter {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.grades .list__item {
+  align-items: center;
+}
+
+.grade-stats {
+  min-width: 72px;
+}
+
+.grade-stats__weight {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 800;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.grade-stats__pct {
+  margin-top: 1px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+/* ---- ETO-free treatment ----------------------------------------------- */
+
+.eto-card__detail {
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  color: var(--tone-ink);
+}
+
+.eto-card__detail strong {
+  padding: 1px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--tone-line);
+}
+
+/* ---- Responsive ------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .scan-card {
+    align-items: flex-start;
+  }
+
+  .scan-card__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .weights .stat__value {
+    font-size: var(--fs-xl);
+  }
+}

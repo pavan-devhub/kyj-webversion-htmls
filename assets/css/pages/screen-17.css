@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Screen 17 — VISWARUPAM · Buyer Match (Stage 5 · 1 of 3)
+   ========================================================================== */
+
+/* ---- Filter bar (in hero) ---------------------------------------------- */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.filter-bar__label {
+  margin-right: 4px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.filter-bar__pill {
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+}
+
+/* ---- Best-match buyer card --------------------------------------------- */
+
+.buyer-card__strip {
+  align-items: center;
+  padding: 22px 24px;
+  background:
+    radial-gradient(260px 140px at 100% 0%, rgba(255, 213, 79, 0.18), transparent 70%),
+    linear-gradient(135deg, #0d1250, #1a237e 55%, #283593);
+}
+
+.buyer-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 750;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.buyer-card__country {
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.trust-badge {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+  white-space: nowrap;
+  color: #1a237e;
+  background: linear-gradient(135deg, #fff1b8, #ffd54f);
+  box-shadow: 0 8px 20px -8px rgba(255, 193, 7, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Buyer facts — icon tile + label + value */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 20px 24px;
+}
+
+.fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--ink-50);
+  border: 1px solid var(--line);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+
+.fact:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+
+.fact__icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  font-size: 18px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--accent-line), var(--shadow-xs);
+}
+
+.fact__body {
+  min-width: 0;
+}
+
+.fact__key {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.fact__val {
+  margin-top: 2px;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  line-height: 1.45;
+  color: var(--ink-900);
+}
+
+.fact__val.is-good {
+  color: var(--success-ink);
+}
+
+/* Trust score bar */
+.trust {
+  padding: 18px 24px 22px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--accent-soft), var(--surface));
+}
+
+.trust__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.trust__label {
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: var(--accent-ink);
+}
+
+.trust__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.trust .progress {
+  background: #e3e6f5;
+}
+
+.trust .progress__fill {
+  background: linear-gradient(90deg, #3949ab, #1a237e);
+}
+
+.trust__note {
+  margin-top: 10px;
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--ink-500);
+}
+
+/* Dossier note */
+.dossier strong {
+  font-weight: 700;
+}
+
+/* ---- Other matches ----------------------------------------------------- */
+
+.matches {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match {
+  padding: 18px 20px;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+
+.match:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.match__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.match__name {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink-900);
+}
+
+.match__country {
+  margin-top: 3px;
+  font-size: var(--fs-xs);
+  color: var(--ink-500);
+}
+
+.match__score {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 4px 11px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  white-space: nowrap;
+  color: #b45309;
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+}
+
+.match__dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.match__detail {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line-strong);
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+  color: var(--ink-500);
+}
+
+/* Below-threshold buyer: visible but blocked */
+.match.is-blocked {
+  opacity: 0.72;
+  background: var(--ink-50);
+  box-shadow: none;
+}
+
+.match.is-blocked:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.match.is-blocked .match__score {
+  color: var(--ink-400);
+  background: var(--ink-100);
+  border-color: var(--ink-200);
+}
+
+.match.is-blocked .match__detail {
+  color: var(--ink-400);
+}
+
+/* ---- BSM booking condition --------------------------------------------- */
+
+.gate-note .callout__title {
+  margin-bottom: 8px;
+}
+
+.gate-note p + p {
+  margin-top: 10px;
+}
+
+/* ---- Responsive -------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 16px;
+  }
+
+  .buyer-card__strip {
+    flex-wrap: wrap;
+    padding: 18px 16px;
+  }
+
+  .trust {
+    padding: 16px;
+  }
+}

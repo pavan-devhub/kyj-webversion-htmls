@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Screen 16 — COA · Phytosanitary · Stage 4 Badge (నాణ్యత)
+   ========================================================================== */
+
+.page-head--center {
+  background:
+    radial-gradient(420px 300px at 50% 46%, rgba(255, 213, 79, 0.18), transparent 70%),
+    var(--hero-bg);
+}
+
+/* Screen title sits above the badge preview */
+.doc-title {
+  font-size: clamp(20px, 1.8vw, var(--fs-xl));
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px;
+}
+
+.badge-title {
+  font-size: clamp(30px, 3.2vw, 40px);
+}
+
+/* Badge not earned yet: a warm gold dashed ring around the medal */
+.medal--soon::after {
+  border-style: dashed;
+  border-color: rgba(255, 224, 130, 0.55);
+}
+
+/* ---- Document cards ----------------------------------------------------- */
+
+.docs {
+  gap: 16px;
+}
+
+.doc {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc .card__strip {
+  padding: 14px 20px;
+}
+
+.doc__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 20px 20px;
+}
+
+.doc__checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.doc__checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--ink-700);
+}
+
+.doc__check {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 11.5px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1b5e20;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+}
+
+.doc__checks li.is-pending {
+  font-weight: 600;
+  color: #e65100;
+}
+
+.doc__checks li.is-pending .doc__check {
+  color: #e65100;
+  background: var(--warning-soft);
+  border-color: var(--warning-line);
+}
+
+.doc__upload {
+  margin-top: auto;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--tone-ink);
+}
+
+.doc__upload.is-done {
+  background: linear-gradient(160deg, #e8f5e9, #f4fbf4);
+  border: 1.5px solid #81c784;
+}
+
+/* ---- SOP note ----------------------------------------------------------- */
+
+.sop {
+  padding: 18px 20px;
+  line-height: 1.8;
+}
+
+.sop strong {
+  color: var(--tone-ink);
+}
+
+/* ---- Stage 4 gate ------------------------------------------------------- */
+
+.gate__title {
+  margin-bottom: 16px;
+  font-size: var(--fs-md);
+  font-weight: 750;
+  text-align: center;
+  color: var(--tone-ink);
+}
+
+.gate .list__item {
+  align-items: center;
+  padding: 12px 0;
+}
+
+.gate .list__item:first-child {
+  padding-top: 0;
+}
+
+.gate .list__item:last-child {
+  padding-bottom: 0;
+}
+
+.gate .list__title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.gate .list__item.is-pending {
+  --tone: #f57f17;
+  --tone-ink: #e65100;
+}
+
+/* ---- Coins after badge -------------------------------------------------- */
+
+.coins--total .coins__head {
+  margin-bottom: 0;
+}
+
+/* ---- Action bar with a single CTA --------------------------------------- */
+
+.action-bar--solo {
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .docs {
+    gap: 14px;
+  }
+}

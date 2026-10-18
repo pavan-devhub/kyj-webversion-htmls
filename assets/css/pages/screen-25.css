@@ -1,0 +1,402 @@
+/* ==========================================================================
+   Screen 25 — FIRC Upload · Two-Track (Stage 7 ★)
+   ========================================================================== */
+
+/* Stage 7 ★ hero: same gold glow + star pill as screen 23 */
+.gold-note {
+  color: #a16207;
+}
+
+/* ---- Payment received panel (hero visual) ------------------------------ */
+
+.payment {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(520px, 100%);
+  padding: 20px 22px;
+  border-radius: var(--r-lg);
+  color: #fff;
+  background:
+    radial-gradient(220px 140px at 0% 50%, rgba(255, 213, 79, 0.16), transparent 70%),
+    rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 18px 40px -22px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.payment__icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 30px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.4), transparent 55%),
+    rgba(255, 213, 79, 0.2);
+  border: 2px solid rgba(255, 213, 79, 0.6);
+  box-shadow: 0 0 0 6px rgba(255, 213, 79, 0.1);
+}
+
+.payment__body {
+  min-width: 0;
+}
+
+.payment__title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.payment__amount {
+  margin: 4px 0 6px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #ffd54f;
+  font-variant-numeric: tabular-nums;
+}
+
+.payment__sub {
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---- Payment route (bank chain) ----------------------------------------- */
+
+.route {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.route__node {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 14px 18px;
+  border-radius: var(--r-md);
+  text-align: center;
+  background: linear-gradient(160deg, var(--accent-soft), var(--surface) 80%);
+  border: 1px solid var(--accent-line);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+
+.route__node:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.route__flag {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 26px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--accent-line), 0 8px 18px -10px var(--accent-glow);
+}
+
+.route__name {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+
+.route__role {
+  margin-top: 4px;
+  padding: 2px 10px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 650;
+  color: var(--accent-2);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--accent-line);
+}
+
+.route__node.is-origin {
+  background: linear-gradient(160deg, #f2f5f6, var(--surface) 80%);
+  border-color: #d5dde1;
+}
+
+.route__node.is-origin .route__name {
+  color: #263238;
+}
+
+.route__node.is-origin .route__role {
+  color: #546e7a;
+  border-color: #d5dde1;
+}
+
+.route__node.is-dest {
+  background:
+    radial-gradient(180px 120px at 100% 0%, rgba(255, 213, 79, 0.25), transparent 70%),
+    linear-gradient(135deg, #1b5e20, #2e7d32);
+  border-color: transparent;
+  box-shadow: 0 16px 30px -18px rgba(27, 94, 32, 0.9);
+}
+
+.route__node.is-dest .route__name {
+  color: #fff;
+}
+
+.route__node.is-dest .route__role {
+  color: #3b2a00;
+  background: linear-gradient(135deg, #ffe082, #ffc107);
+  border-color: transparent;
+}
+
+.route__arrow {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 14px -6px var(--accent-glow);
+}
+
+/* ---- Two-track FIRC ------------------------------------------------------ */
+
+.tracks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.track {
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(260px 160px at 100% 0%, color-mix(in srgb, var(--tone) 12%, transparent), transparent 70%),
+    linear-gradient(160deg, var(--tone-soft) 0%, var(--surface) 85%);
+  border: 1.5px solid var(--tone);
+  box-shadow: 0 16px 32px -24px color-mix(in srgb, var(--tone) 80%, transparent);
+}
+
+.track::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tone-ink), var(--tone));
+}
+
+.track__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 22px 20px;
+}
+
+.track__header {
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--tone-line);
+  font-family: var(--font-sans);
+  font-size: var(--fs-2xs);
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone-ink);
+}
+
+.track__bank {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 750;
+  line-height: 1.3;
+  color: var(--ink-900);
+}
+
+.track__acc {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--ink-500);
+}
+
+.track__amt {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--tone-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.track__eta {
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--ink-500);
+}
+
+.track__status {
+  align-self: flex-start;
+  margin-top: 12px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: #fff;
+  background: var(--tone);
+  box-shadow: 0 6px 14px -6px color-mix(in srgb, var(--tone) 70%, transparent);
+}
+
+.track__ref {
+  margin-top: 6px;
+  font-weight: 600;
+  color: var(--ink-600);
+}
+
+/* Wide track cards: identity on the left, amount on the right */
+@container (min-width: 440px) {
+  .track__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "head   head"
+      "bank   amt"
+      "acc    eta"
+      "status ref";
+    align-items: end;
+    gap: 2px 20px;
+  }
+
+  .track__header { grid-area: head; }
+  .track__bank   { grid-area: bank; }
+  .track__acc    { grid-area: acc; align-self: start; }
+
+  .track__amt {
+    grid-area: amt;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .track__eta {
+    grid-area: eta;
+    align-self: start;
+    text-align: right;
+  }
+
+  .track__status {
+    grid-area: status;
+    justify-self: start;
+    align-self: center;
+    margin-top: 16px;
+  }
+
+  .track__ref {
+    grid-area: ref;
+    align-self: center;
+    margin-top: 16px;
+  }
+}
+
+/* ---- FIRC document ------------------------------------------------------ */
+
+.firc-doc .card__body {
+  padding: 20px 24px 22px;
+}
+
+.verified-tag {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: #1b5e20;
+  background: #a5d6a7;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.firc-doc .kv__val {
+  overflow-wrap: anywhere;
+}
+
+/* ---- Upload checklist ---------------------------------------------------- */
+
+.uploads .list__item {
+  align-items: center;
+}
+
+.uploads .is-pending .list__meta {
+  font-weight: 600;
+  color: var(--tone-ink);
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .page-head__visual {
+    width: 100%;
+  }
+
+  .payment {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 760px) {
+  .tracks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .route {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .route__node {
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .route__flag {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+    font-size: 22px;
+  }
+
+  .route__role {
+    margin: 0 0 0 auto;
+  }
+
+  .route__arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .payment {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

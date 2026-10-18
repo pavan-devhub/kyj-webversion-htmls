@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Screen 4 — Export Readiness Score (ERS)
+   ========================================================================== */
+
+.eligible-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: #fff;
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  box-shadow: 0 8px 22px -8px rgba(46, 125, 50, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.score-ring {
+  --fill: #e1bee7;
+}
+
+/* ---- Category grid ------------------------------------------------------ */
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+
+.cat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.cat-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cat-card__name {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.cat-card__pts {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cat-card__detail {
+  font-size: var(--fs-xs);
+  line-height: 1.65;
+  color: var(--ink-500);
+}
+
+.gate-tile {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(200px 120px at 50% 0%, rgba(129, 199, 132, 0.35), transparent 70%),
+    var(--tone-soft);
+}
+
+@media (max-width: 1180px) {
+  .cat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cat-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,765 @@
+/* ==========================================================================
+   Screen 27 — KYJ-1 Platinum Certification (Stage 8 · journey finale)
+   ========================================================================== */
+
+:root {
+  /* Platinum + gold palette used by the bespoke pieces below */
+  --plat-900: #1c262b;
+  --plat-800: #263238;
+  --plat-700: #37474f;
+  --plat-600: #455a64;
+  --plat-500: #607d8b;
+  --plat-300: #b0bec5;
+  --plat-200: #cfd8dc;
+  --plat-100: #eceff1;
+  --gold: #ffd700;
+  --gold-2: #ffc107;
+  --gold-deep: #e6b800;
+  --gold-grad: linear-gradient(135deg, #ffe57f 0%, #ffd700 50%, #ffc107 100%);
+}
+
+/* ---- Ceremony hero ------------------------------------------------------ */
+
+.cert-hero {
+  padding-bottom: 44px;
+  background:
+    radial-gradient(380px 280px at 50% 46%, rgba(255, 215, 0, 0.2), transparent 70%),
+    linear-gradient(160deg, #1c262b 0%, #263238 28%, #455a64 64%, #607d8b 90%, #78909c 100%);
+  box-shadow:
+    inset 0 -3px 0 rgba(255, 215, 0, 0.7),
+    0 24px 48px -24px var(--accent-glow),
+    var(--shadow-md);
+}
+
+/* Header shimmer (top-right gold glint) */
+.cert-hero__glint {
+  position: absolute;
+  z-index: -1;
+  top: -90px;
+  right: -90px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.16) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+/* Hero shimmer (soft light + gold pools) */
+.cert-hero__shimmer {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 42%),
+    radial-gradient(circle at 82% 72%, rgba(255, 215, 0, 0.13) 0%, transparent 44%);
+  pointer-events: none;
+}
+
+.cert-hero .stage-pill--gold {
+  color: var(--plat-800);
+  background: var(--gold-grad);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 6px 18px -6px rgba(255, 215, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Header title as a ceremony banner flanked by gold hairlines */
+.ceremony-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: var(--fs-md);
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: #ffe082;
+}
+
+.ceremony-title::before,
+.ceremony-title::after {
+  content: "";
+  flex: 0 0 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.85));
+}
+
+.ceremony-title::after {
+  background: linear-gradient(270deg, transparent, rgba(255, 215, 0, 0.85));
+}
+
+.ceremony-title__crown {
+  font-size: 18px;
+  letter-spacing: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Platinum medal with gold rim */
+.medal--platinum {
+  width: 148px;
+  height: 148px;
+  margin: 26px auto 20px;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.9), transparent 42%),
+    conic-gradient(from 210deg, #eceff1, #90a4ae, #cfd8dc, #78909c, #eceff1, #b0bec5, #eceff1);
+  border: 3px solid var(--gold);
+  box-shadow:
+    0 0 0 10px rgba(255, 215, 0, 0.12),
+    0 0 0 22px rgba(255, 215, 0, 0.05),
+    0 0 64px rgba(255, 215, 0, 0.3),
+    0 24px 48px -16px rgba(0, 0, 0, 0.55);
+}
+
+.medal--platinum::after {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.medal--platinum .medal__icon {
+  font-size: 66px;
+  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.55)) drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
+}
+
+.cert-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.8vw, 50px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(255, 215, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.cert-hero__sub {
+  max-width: 640px;
+}
+
+.cert-hero .ribbon--gold {
+  margin-top: 10px;
+  color: var(--plat-800);
+  background: var(--gold-grad);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 28px -10px rgba(255, 215, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+}
+
+/* ---- 8-stage journey stepper ------------------------------------------- */
+
+.journey-card {
+  overflow: hidden;
+}
+
+.journey-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1b5e20 0%, #2e7d32 55%, var(--plat-500) 82%, var(--gold) 100%);
+}
+
+.journey-card .card__head {
+  margin-bottom: 22px;
+}
+
+.journey {
+  padding: 6px 0 2px;
+}
+
+.journey .stepper__step {
+  width: 92px;
+}
+
+.journey .stepper__line {
+  margin-inline: -26px;
+}
+
+.journey .stepper__dot.is-done {
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+}
+
+.journey .stepper__label {
+  font-size: var(--fs-xs);
+}
+
+.stepper__line--final {
+  background: linear-gradient(90deg, #2e7d32, var(--plat-500));
+}
+
+/* Final node — platinum crown */
+.stepper__dot.is-platinum {
+  width: 52px;
+  height: 52px;
+  margin-top: -6px;
+  font-size: 24px;
+  color: var(--gold);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.3), transparent 55%),
+    linear-gradient(135deg, var(--plat-800), var(--plat-500));
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.2), 0 10px 22px -8px rgba(38, 50, 56, 0.75);
+}
+
+.stepper__step--final .stepper__label {
+  margin-top: 4px;
+  font-weight: 800;
+  color: var(--plat-800);
+}
+
+/* ---- Official credential (framed certificate) -------------------------- */
+
+.certificate {
+  container: cert / inline-size;
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 46px 44px 30px;
+  border-radius: var(--r-md);
+  background:
+    radial-gradient(520px 220px at 50% 0%, rgba(255, 215, 0, 0.09), transparent 70%),
+    repeating-radial-gradient(circle at 50% 115%, transparent 0 11px, rgba(96, 125, 139, 0.04) 11px 12px),
+    linear-gradient(180deg, #fffefb 0%, #fbfaf5 100%);
+  border: 2px solid var(--plat-800);
+  box-shadow:
+    inset 0 0 0 6px #fffefb,
+    inset 0 0 0 7px var(--plat-200),
+    var(--shadow-md);
+}
+
+/* Gold corner brackets */
+.certificate__corner {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border: 3px solid var(--gold-deep);
+  pointer-events: none;
+}
+
+.certificate__corner--tl { top: 15px; left: 15px; border-right: 0; border-bottom: 0; border-top-left-radius: 4px; }
+.certificate__corner--tr { top: 15px; right: 15px; border-left: 0; border-bottom: 0; border-top-right-radius: 4px; }
+.certificate__corner--bl { bottom: 15px; left: 15px; border-right: 0; border-top: 0; border-bottom-left-radius: 4px; }
+.certificate__corner--br { bottom: 15px; right: 15px; border-left: 0; border-top: 0; border-bottom-right-radius: 4px; }
+
+.certificate__label {
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--plat-500);
+}
+
+.certificate__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  color: var(--plat-800);
+}
+
+.certificate__title::before,
+.certificate__title::after {
+  content: "";
+  flex: 0 0 34px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-deep));
+}
+
+.certificate__title::after {
+  background: linear-gradient(270deg, transparent, var(--gold-deep));
+}
+
+.certificate__subtitle {
+  margin-top: 6px;
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  font-style: italic;
+  color: var(--plat-600);
+}
+
+.certificate__name {
+  margin-top: 22px;
+  padding: 0 30px 8px;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--plat-900);
+  border-bottom: 1px solid rgba(230, 184, 0, 0.7);
+}
+
+.certificate__id {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  color: var(--plat-500);
+}
+
+.certificate__quote {
+  max-width: 540px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--plat-100);
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--plat-700);
+  text-wrap: pretty;
+}
+
+/* Footer: date · seal · place */
+.certificate__issued {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: 18px;
+  margin-top: 22px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--plat-500);
+}
+
+.certificate__issued > span {
+  padding-top: 8px;
+  border-top: 1px solid var(--plat-300);
+}
+
+.certificate__issued > span:first-child {
+  text-align: left;
+}
+
+.certificate__issued > span:last-child {
+  text-align: right;
+}
+
+/* Rotated gold seal */
+.certificate__stamp {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 1;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.06) 70%);
+  border: 2px solid var(--gold-deep);
+  box-shadow:
+    inset 0 0 0 4px #fffdf6,
+    inset 0 0 0 5px rgba(230, 184, 0, 0.6),
+    0 8px 18px -10px rgba(166, 120, 0, 0.6);
+  transform: rotate(-10deg);
+}
+
+.certificate__stamp::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px dashed rgba(230, 184, 0, 0.6);
+}
+
+/* The certificate scales with its own width, not the viewport */
+@container cert (max-width: 520px) {
+  .certificate__title {
+    gap: 10px;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+  }
+
+  .certificate__title::before,
+  .certificate__title::after {
+    flex-basis: 20px;
+  }
+
+  .certificate__issued {
+    gap: 12px;
+  }
+
+  .certificate__stamp {
+    width: 64px;
+    height: 64px;
+    font-size: 25px;
+  }
+}
+
+@container cert (max-width: 380px) {
+  .certificate__title {
+    font-size: var(--fs-xl);
+  }
+
+  .certificate__title::before,
+  .certificate__title::after {
+    display: none;
+  }
+}
+
+/* ---- PLATINUM member card on a display stage --------------------------- */
+
+.card-stage {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 36px 28px;
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(70% 55% at 50% 40%, rgba(255, 255, 255, 0.95), transparent 72%),
+    radial-gradient(60% 40% at 50% 100%, rgba(255, 215, 0, 0.12), transparent 70%),
+    linear-gradient(160deg, #eceff1 0%, #f7f9fa 55%, #e3e9ec 100%);
+  border: 1px solid #d5dde1;
+  box-shadow: inset 0 1px 0 #fff, var(--shadow-sm);
+}
+
+.card-stage .member-card {
+  max-width: 420px;
+}
+
+.member-card__glow {
+  position: absolute;
+  z-index: -1;
+  top: -60px;
+  right: -60px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.24) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.member-card--platinum .member-card__tier {
+  box-shadow: 0 0 18px -4px rgba(255, 215, 0, 0.45);
+}
+
+.member-card--platinum .member-card__name,
+.member-card--platinum .member-card__number,
+.member-card--platinum .member-card__foot {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- Chairman recognition ---------------------------------------------- */
+
+.block > .card {
+  flex: 1;
+}
+
+.chairman,
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.chairman__person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.chairman__avatar {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, #1b5e20, #388e3c);
+  border: 2.5px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.18), 0 10px 20px -10px rgba(27, 94, 32, 0.75);
+}
+
+.chairman__info {
+  min-width: 0;
+}
+
+.chairman__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 750;
+  color: var(--plat-800);
+}
+
+.chairman__role {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--plat-500);
+}
+
+.chairman__quote {
+  margin: 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: var(--fs-base);
+  line-height: 1.85;
+  color: var(--plat-600);
+  background: linear-gradient(90deg, #fffbe8 0%, #f5f7fa 55%);
+}
+
+.chairman__sig {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--plat-200);
+  font-size: var(--fs-xs);
+  color: var(--plat-500);
+}
+
+.chairman__signature {
+  padding: 0 8px 4px;
+  font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", "Lucida Handwriting", cursive;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--plat-800);
+  border-bottom: 1px solid var(--plat-300);
+}
+
+/* ---- 14-month track record --------------------------------------------- */
+
+.track__stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.track .stat {
+  padding: 16px 10px 14px;
+  background: linear-gradient(160deg, var(--plat-100), #fff 85%);
+  border-color: var(--plat-200);
+}
+
+.track .stat__value {
+  color: var(--plat-800);
+}
+
+.track .stat__unit {
+  color: var(--plat-500);
+}
+
+.track__summary {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--plat-100);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  text-align: center;
+  color: var(--plat-700);
+}
+
+.track__amount {
+  font-weight: 750;
+  color: #1b5e20;
+}
+
+/* ---- PLATINUM benefits ------------------------------------------------- */
+
+.benefits .card__strip {
+  background: linear-gradient(135deg, var(--plat-800) 0%, var(--plat-600) 60%, var(--plat-500) 100%);
+  box-shadow: inset 0 -2px 0 rgba(255, 215, 0, 0.75);
+}
+
+.benefits .list__icon {
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+}
+
+.benefits .list__aside {
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.06em;
+}
+
+/* ---- KRISHI COINS final tally ------------------------------------------ */
+
+.coins--final {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 26px 24px;
+  text-align: center;
+  color: #5d4037;
+  background:
+    radial-gradient(280px 140px at 50% 0%, rgba(255, 255, 255, 0.55), transparent 70%),
+    var(--gold-grad);
+  border: 1px solid rgba(191, 144, 0, 0.45);
+  box-shadow: 0 18px 36px -20px rgba(255, 179, 0, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.coins--final .coins__title {
+  justify-content: center;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5d4037;
+}
+
+.coins--final .coins__value {
+  margin: 4px 0 2px;
+  font-size: clamp(42px, 4vw, 54px);
+  color: #bf360c;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.coins--final .coins__note {
+  max-width: 420px;
+  margin-top: 0;
+  font-size: var(--fs-sm);
+  color: #5d4037;
+}
+
+/* ---- WhatsApp ----------------------------------------------------------- */
+
+.wa--final {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wa--final .wa__thread {
+  flex: 1;
+}
+
+/* Align the WhatsApp card with the labelled card beside it */
+@media (min-width: 961px) {
+  .wa--final {
+    margin-top: 30px;
+  }
+}
+
+/* ---- Platinum action bar ------------------------------------------------ */
+
+.action-bar--platinum {
+  background: linear-gradient(135deg, rgba(28, 38, 43, 0.95) 0%, rgba(55, 71, 79, 0.95) 55%, rgba(96, 125, 139, 0.95) 100%);
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 20px 44px -18px rgba(28, 38, 43, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.action-bar--platinum .action-bar__text {
+  font-weight: 550;
+  line-height: 1.6;
+  color: var(--gold);
+}
+
+.cta-platinum {
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--plat-800);
+  background: var(--gold-grad);
+  box-shadow: 0 12px 30px -10px rgba(255, 193, 7, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.cta-platinum:hover {
+  box-shadow: 0 16px 36px -10px rgba(255, 193, 7, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* CTA shimmer sweep */
+.cta-platinum__shimmer {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  background-size: 250% 100%;
+  animation: cta-shimmer 4s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+
+@keyframes cta-shimmer {
+  0%, 35% { background-position: 130% 0; }
+  100%    { background-position: -130% 0; }
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  .ceremony-title::before,
+  .ceremony-title::after {
+    flex-basis: 24px;
+  }
+
+  .journey {
+    padding-top: 8px;
+  }
+
+  .journey .stepper__step {
+    width: 64px;
+  }
+
+  .journey .stepper__line {
+    margin-inline: -15px;
+  }
+
+  .stepper__dot.is-platinum {
+    width: 44px;
+    height: 44px;
+    margin-top: -5px;
+    font-size: 20px;
+  }
+
+  .stepper__step--final .stepper__label {
+    margin-top: 5px;
+  }
+
+  .certificate {
+    padding: 40px 26px 26px;
+  }
+
+  .card-stage {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ceremony-title::before,
+  .ceremony-title::after {
+    display: none;
+  }
+
+  .track__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .certificate__issued {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .certificate__stamp {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .chairman__person {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-platinum__shimmer {
+    animation: none;
+  }
+}

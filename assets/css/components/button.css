@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Buttons & selectable chips
+   ========================================================================== */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-base);
+  font-weight: 650;
+  line-height: 1.3;
+  text-align: center;
+  white-space: normal;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    background var(--dur-fast),
+    border-color var(--dur-fast);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(3px);
+}
+
+/* Two-line CTA: main label + translated / helper sub-line */
+.btn__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.btn__sub {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.btn--primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  box-shadow: var(--shadow-accent), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px -8px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.btn--tone {
+  color: #fff;
+  background: linear-gradient(135deg, var(--tone-ink), var(--tone));
+  box-shadow: 0 10px 26px -10px color-mix(in srgb, var(--tone) 60%, transparent);
+}
+
+.btn--tone:hover {
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  color: var(--ink-800);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn--secondary:hover {
+  border-color: var(--accent-line);
+  color: var(--accent-ink);
+  transform: translateY(-1px);
+}
+
+.btn--gold {
+  color: #3b2a00;
+  background: linear-gradient(135deg, #ffe082, #ffc107);
+  box-shadow: 0 10px 26px -10px rgba(255, 193, 7, 0.7);
+}
+
+.btn--lg {
+  min-height: 56px;
+  padding: 14px 28px;
+  font-size: var(--fs-md);
+  border-radius: 16px;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ---- Chips (selectable options) ---------------------------------------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--ink-700);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  transition: border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast);
+}
+
+.chip:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-1px);
+}
+
+.chip.is-selected {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 6px 16px -6px var(--accent-glow);
+}

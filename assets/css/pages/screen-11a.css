@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Screen 11a — Stage 2 Badge · నమోదు (Namodu)
+   ========================================================================== */
+
+.page-head--center {
+  background:
+    radial-gradient(420px 300px at 50% 38%, rgba(255, 213, 79, 0.2), transparent 70%),
+    var(--hero-bg);
+}
+
+/* Diagonal pin-stripe texture from the original badge hero */
+.badge-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.045) 0 2px,
+    transparent 2px 14px
+  );
+}
+
+.meta-chip--cleared {
+  font-weight: 700;
+  color: #ffe082;
+  background: rgba(255, 193, 7, 0.16);
+  border-color: rgba(255, 213, 79, 0.4);
+}
+
+.badge-title {
+  font-size: clamp(32px, 3.4vw, var(--fs-4xl));
+}
+
+/* Journey stepper stretches across the full card */
+.journey .stepper__step {
+  width: 104px;
+}
+
+/* Current stage: solid page blue, as in the original tracker */
+.journey .stepper__dot.is-active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px rgba(13, 71, 161, 0.18);
+}
+
+/* What Stage 2 unlocks */
+.unlocks .card__title {
+  margin-bottom: 14px;
+}
+
+.next-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.next-steps li {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--tone-ink);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--tone-line);
+}

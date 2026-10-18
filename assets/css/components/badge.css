@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Tags, status pills & dots
+   ========================================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: var(--tone-ink);
+  background: var(--tone-soft);
+  border: 1px solid var(--tone-line);
+}
+
+.tag--solid {
+  color: #fff;
+  background: var(--tone);
+  border-color: transparent;
+}
+
+.tag--glass {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tag--lg {
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Small coloured status dot (e.g. WhatsApp live indicator) */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--tone);
+  flex-shrink: 0;
+}
+
+.dot--pulse {
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--tone) 50%, transparent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tone) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* Numbered circle (step numbers in lists) */
+.num-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--tone);
+}

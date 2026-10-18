@@ -1,0 +1,138 @@
+/* ==========================================================================
+   FEED membership card (credit-card proportions, tier themes)
+   ========================================================================== */
+
+.member-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1.586;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px;
+  border-radius: 22px;
+  color: #fff;
+  background: linear-gradient(135deg, #0f3d24 0%, #1b5e20 40%, #2e7d32 75%, #43a047 100%);
+  box-shadow: 0 30px 60px -28px rgba(15, 61, 36, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.member-card:hover {
+  transform: perspective(900px) rotateX(4deg) rotateY(-6deg) translateY(-4px);
+}
+
+/* soft orbs */
+.member-card::before,
+.member-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.member-card::before {
+  width: 260px;
+  height: 260px;
+  right: -90px;
+  top: -110px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 65%);
+}
+
+.member-card::after {
+  width: 300px;
+  height: 300px;
+  left: -120px;
+  bottom: -170px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 65%);
+}
+
+/* Shine sweep */
+.member-card__shine {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.14) 48%, transparent 60%);
+  background-size: 250% 100%;
+  animation: shine 6s var(--ease-in-out) infinite;
+}
+
+@keyframes shine {
+  0%, 40% { background-position: 130% 0; }
+  100%    { background-position: -130% 0; }
+}
+
+.member-card__brand {
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.member-card__chip {
+  width: 44px;
+  height: 32px;
+  margin: 16px 0 12px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #ffe7a3, #d4a72c 55%, #f6d77a);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.member-card__tier {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.member-card__name {
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+}
+
+.member-card__number {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.member-card__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Platinum tier */
+.member-card--platinum {
+  background: linear-gradient(135deg, #1c262b 0%, #37474f 30%, #607d8b 65%, #b0bec5 100%);
+  box-shadow: 0 30px 60px -28px rgba(38, 50, 56, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.member-card--platinum .member-card__tier {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.18);
+  border-color: rgba(255, 215, 0, 0.7);
+}
+
+@media (max-width: 480px) {
+  .member-card {
+    aspect-ratio: auto;
+    min-height: 220px;
+    padding: 22px;
+  }
+}

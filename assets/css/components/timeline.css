@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Timeline — vertical sequence with connector line
+   Dot colour comes from --tone (or an inline background).
+   ========================================================================== */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  padding-bottom: 20px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* connector */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 34px;
+  bottom: 2px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--ink-150);
+}
+
+.timeline__item:last-child::before {
+  display: none;
+}
+
+.timeline__dot {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 750;
+  color: #fff;
+  background: var(--tone);
+  box-shadow: 0 0 0 4px var(--surface), 0 6px 14px -6px rgba(0, 0, 0, 0.35);
+}
+
+.timeline__body {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.timeline__label {
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.timeline__title {
+  font-size: var(--fs-base);
+  font-weight: 650;
+  color: var(--ink-900);
+}
+
+.timeline__text {
+  margin-top: 2px;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--ink-700);
+}
+
+.timeline__meta {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-400);
+}
+
+.timeline__aside {
+  padding-top: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--tone-ink);
+}

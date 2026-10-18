@@ -1,0 +1,65 @@
+/* ==========================================================================
+   WhatsApp message preview
+   ========================================================================== */
+
+.wa {
+  --tone: var(--whatsapp);
+  --tone-ink: #075e54;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid #cfe9d6;
+  box-shadow: var(--shadow-sm);
+}
+
+.wa__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: #fff;
+  background: linear-gradient(135deg, #075e54, #128c7e);
+}
+
+.wa__head .dot {
+  background: var(--whatsapp);
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.25);
+}
+
+.wa__thread {
+  padding: 20px;
+  background-color: #efeae2;
+  background-image:
+    radial-gradient(rgba(7, 94, 84, 0.06) 1.2px, transparent 1.4px),
+    radial-gradient(rgba(7, 94, 84, 0.04) 1.2px, transparent 1.4px);
+  background-size: 18px 18px, 18px 18px;
+  background-position: 0 0, 9px 9px;
+}
+
+.wa__bubble {
+  position: relative;
+  max-width: 100%;
+  padding: 12px 16px;
+  border-radius: 4px 14px 14px 14px;
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  color: #111b21;
+  background: #fff;
+  box-shadow: 0 1px 1.5px rgba(11, 20, 26, 0.13);
+}
+
+/* bubble tail */
+.wa__bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  border-top: 10px solid #fff;
+  border-left: 8px solid transparent;
+}
+
+.wa__bubble strong {
+  font-weight: 700;
+}

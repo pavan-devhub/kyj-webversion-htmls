@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Screen 10 — APEDA RCMC (Stage 2 · 2 of 3)
+   Stage 2 family: intro card · status tracker · side panel · fee bar
+   ========================================================================== */
+
+/* ---- Intro / context card ------------------------------------------------ */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 26px 28px;
+  background:
+    radial-gradient(380px 220px at 100% 0%, rgba(197, 202, 233, 0.8), transparent 70%),
+    var(--tone-soft);
+}
+
+.intro__text {
+  max-width: 980px;
+  font-size: var(--fs-base);
+  line-height: 1.85;
+  color: #3949ab;
+}
+
+.intro__facts {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.intro__facts .kv-cell {
+  box-shadow: var(--shadow-xs);
+}
+
+.intro__facts .kv-cell__k {
+  font-size: var(--fs-xs);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.intro__facts .kv-cell__v {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+/* ---- Application status tracker ----------------------------------------- */
+
+.tracker .card__strip {
+  padding: 16px 24px;
+}
+
+.tracker .tag {
+  flex-shrink: 0;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.tracker__steps {
+  padding: 24px 24px 26px;
+}
+
+.tracker .timeline__item {
+  padding-bottom: 22px;
+}
+
+.tracker .timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.tracker .timeline__text {
+  color: var(--ink-500);
+}
+
+.tracker .timeline__item.is-done {
+  --tone: var(--success-ink);
+}
+
+.tracker .timeline__item.is-done::before {
+  background: color-mix(in srgb, var(--success) 40%, var(--ink-150));
+}
+
+.tracker .timeline__item.is-active {
+  --tone: var(--accent);
+}
+
+.tracker .timeline__item.is-active .timeline__dot {
+  box-shadow:
+    0 0 0 4px var(--surface),
+    0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.tracker .timeline__item.is-active .timeline__body {
+  margin-top: -6px;
+  padding: 10px 14px 12px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.tracker .timeline__item.is-active .timeline__title {
+  color: var(--accent-ink);
+}
+
+.tracker .timeline__item.is-pending .timeline__dot {
+  color: var(--ink-400);
+  background: var(--ink-100);
+  box-shadow: 0 0 0 4px var(--surface), inset 0 0 0 1.5px var(--ink-200);
+}
+
+.tracker .timeline__item.is-pending .timeline__title {
+  color: var(--ink-600);
+}
+
+/* ---- What RCMC unlocks ---------------------------------------------------- */
+
+.benefits {
+  gap: 12px;
+}
+
+.benefit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 18px;
+  border-radius: var(--r-md);
+  background: linear-gradient(160deg, var(--surface) 55%, var(--accent-soft));
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur), border-color var(--dur);
+}
+
+.benefit:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-line);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 20px;
+  line-height: 1;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.benefit__title {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink-900);
+}
+
+.benefit__val {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--accent-ink);
+}
+
+/* ---- DGFT note ------------------------------------------------------------- */
+
+.dgft-note {
+  align-items: center;
+  font-weight: 600;
+}
+
+/* ---- Fee status in the action bar ---------------------------------------- */
+
+.action-bar__text .fee-summary__val {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 3px 12px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .intro__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intro__fact--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    padding: 22px 20px;
+  }
+
+  .intro__facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tracker .card__strip {
+    flex-wrap: wrap;
+  }
+
+  .tracker__steps {
+    padding: 20px 18px 22px;
+  }
+}

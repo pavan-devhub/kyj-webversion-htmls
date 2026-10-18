@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Screen 8 — Soil Health Card Upload (Stage 1 · final step)
+   ========================================================================== */
+
+/* ---- Stage 1 completion strip ------------------------------------------ */
+
+.stage-check {
+  padding: 22px 24px 24px;
+}
+
+.stage-check .card__title {
+  margin-bottom: 16px;
+}
+
+.stage-check__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--ink-800);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--tone-line);
+}
+
+.stage-check__box {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  background: var(--success-ink);
+  box-shadow: 0 4px 10px -4px rgba(27, 94, 32, 0.7);
+}
+
+.stage-check__item.is-pending {
+  color: var(--tone-ink);
+  background: #fff;
+  border: 1.5px dashed var(--tone);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 10%, transparent);
+}
+
+.stage-check__item.is-pending .stage-check__box {
+  background: var(--ink-100);
+  border: 1.5px solid var(--ink-300);
+  box-shadow: none;
+}
+
+/* ---- Upload drop zone ---------------------------------------------------- */
+
+.shc-drop {
+  flex: 1;
+  gap: 10px;
+  padding: 36px 28px;
+}
+
+.shc-drop__icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 8px;
+  border-radius: 22px;
+  font-size: 36px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid var(--tone-line);
+  box-shadow: 0 14px 30px -14px rgba(78, 52, 46, 0.55);
+}
+
+.shc-drop__title {
+  font-size: var(--fs-lg);
+  font-weight: 750;
+  line-height: 1.35;
+  color: var(--tone-ink);
+}
+
+.shc-drop__sub {
+  font-size: var(--fs-sm);
+  color: #8d6e63;
+}
+
+.shc-drop__sources {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.shc-drop__sources .chip {
+  color: #5d4037;
+  background: #fff;
+  border-color: var(--tone-line);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ---- Soil Health Card data ---------------------------------------------- */
+
+.shc-card {
+  flex: 1;
+}
+
+.shc-card .card__head {
+  flex-wrap: wrap;
+}
+
+.shc-id {
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #6d4c41;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.nutrients {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nutrient {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 3px solid var(--tone);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur);
+}
+
+.nutrient:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.nutrient__reading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}
+
+.nutrient .stat__value {
+  font-size: var(--fs-2xl);
+}
+
+.nutrient .stat__unit {
+  margin-top: 0;
+  font-size: var(--fs-xs);
+}
+
+.nutrient .stat__label {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.nutrient .tag {
+  margin-top: 12px;
+}
+
+/* ---- Recommendations ----------------------------------------------------- */
+
+.recs .card__head {
+  margin-bottom: 14px;
+}
+
+.rec {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--tone-ink);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--tone-line);
+}
+
+.rec__icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--tone-soft);
+}
+
+.rec--alert {
+  border-color: #f6c7c7;
+  background:
+    linear-gradient(180deg, rgba(253, 241, 241, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+.rec--alert .rec__icon {
+  background: #fdf1f1;
+}
+
+.rec--ok .rec__icon {
+  color: #fff;
+  background: var(--success);
+}
+
+.recs__source {
+  margin-top: 18px;
+  font-size: var(--fs-xs);
+  color: #558b2f;
+  border-top-color: var(--tone-line);
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .recs__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nutrients {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shc-drop {
+    padding: 28px 18px;
+  }
+}

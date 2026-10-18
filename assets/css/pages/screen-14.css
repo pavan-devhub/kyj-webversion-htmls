@@ -1,0 +1,276 @@
+/* ==========================================================================
+   Screen 14 — NABL Lab Booking (T-04) · Stage 4 · 1 of 3
+   ========================================================================== */
+
+/* ---- Urgency banner ----------------------------------------------------- */
+
+/* A time-critical warning: warning colours, kept calm */
+.urgency {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px 14px 16px;
+  border-radius: var(--r-lg);
+  color: var(--warning-ink);
+  background: linear-gradient(90deg, #fff1e3, var(--warning-soft));
+  border: 1px solid var(--warning-line);
+  box-shadow: var(--shadow-sm);
+}
+
+.urgency::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--warning);
+}
+
+.urgency__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  font-size: 20px;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid var(--warning-line);
+}
+
+.urgency__text {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* ---- PHRT timeline ------------------------------------------------------ */
+
+.phrt-timeline .timeline__item {
+  align-items: center;
+  padding: 0 0 18px;
+}
+
+.phrt-timeline .timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.phrt-timeline .timeline__item::before {
+  top: 22px;
+  bottom: -1px;
+  background: color-mix(in srgb, var(--tone) 28%, transparent);
+}
+
+.phrt-timeline .timeline__dot {
+  justify-self: center;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 4px #fff, 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+}
+
+.phrt-timeline .timeline__body {
+  padding: 0;
+}
+
+.phrt-timeline .timeline__title {
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--ink-700);
+}
+
+.phrt-timeline .timeline__aside {
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The collect-by deadline is the date that matters most */
+.phrt-timeline .is-deadline .timeline__title {
+  font-weight: 700;
+  color: var(--warning-ink);
+}
+
+.phrt-timeline .is-deadline .timeline__aside {
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  color: #fff;
+  background: linear-gradient(135deg, #e65100, #ff8f00);
+  box-shadow: 0 6px 14px -6px rgba(230, 81, 0, 0.7);
+}
+
+/* ---- Lab selection ------------------------------------------------------ */
+
+.labs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lab {
+  padding: 20px 22px 20px 58px;
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur), border-color var(--dur);
+}
+
+.lab:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* radio indicator, drawn in CSS */
+.lab::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-300);
+  background: #fff;
+}
+
+.lab.is-selected {
+  background: linear-gradient(160deg, var(--tone-soft), #fff 75%);
+}
+
+.lab.is-selected:hover {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 8%, transparent), var(--shadow-md);
+}
+
+.lab.is-selected::before {
+  border-color: var(--tone-ink);
+  background: radial-gradient(circle, var(--tone-ink) 0 5px, #fff 5.5px);
+}
+
+.lab__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lab__name {
+  font-size: var(--fs-md);
+  font-weight: 750;
+  line-height: 1.35;
+  color: var(--tone-ink);
+}
+
+.lab:not(.is-selected) .lab__name {
+  color: var(--ink-800);
+}
+
+.lab__detail {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--ink-600);
+}
+
+.lab__meta {
+  align-items: center;
+  margin-top: 12px;
+}
+
+.lab__dist {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: #e65100;
+}
+
+/* ---- EU test panel ------------------------------------------------------ */
+
+.panel-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+.panel-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--ink-700);
+  border-bottom: 1px solid var(--line);
+}
+
+.panel-list__item:first-child {
+  padding-top: 0;
+}
+
+.panel-list__item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.panel-list__dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #004d40;
+}
+
+/* ---- Booking details ---------------------------------------------------- */
+
+.booking__fields {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.booking .field__control {
+  font-size: var(--fs-sm);
+  background: var(--ink-50);
+}
+
+.booking .field__control.is-active {
+  background: var(--surface);
+}
+
+.booking .field__adorn {
+  font-size: 18px;
+}
+
+.fee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-600);
+  background: var(--tone-soft);
+  border: 1px solid var(--tone-line);
+}
+
+@media (max-width: 600px) {
+  .urgency {
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+
+  .lab {
+    padding: 18px 18px 18px 50px;
+  }
+
+  .lab::before {
+    left: 18px;
+    top: 20px;
+  }
+
+  .lab__top {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

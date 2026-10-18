@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Screen s21 — TraceX QR Creation · Stage 6 · 2 of 3
+   ========================================================================== */
+
+/* ---- Lot QR info (hero) ----------------------------------------------- */
+
+.qr-info__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--accent-ink);
+}
+
+.qr-info__sub {
+  margin-top: 2px;
+  font-size: var(--fs-md);
+  color: var(--ink-600);
+}
+
+.qr-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 4px;
+  padding: 7px 14px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  overflow-wrap: anywhere;
+}
+
+/* ---- Main QR (decorative 8 × 8 pattern, crisp square modules) --------- */
+
+.qr-plate {
+  position: relative;
+  padding: 22px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 0 18px rgba(255, 255, 255, 0.05),
+    0 28px 56px -22px rgba(0, 0, 0, 0.6);
+}
+
+/* scanner corner brackets */
+.qr-plate::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  background:
+    linear-gradient(#7e57c2, #7e57c2) top left / 20px 3px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) top left / 3px 20px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) top right / 20px 3px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) top right / 3px 20px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) bottom left / 20px 3px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) bottom left / 3px 20px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) bottom right / 20px 3px no-repeat,
+    linear-gradient(#7e57c2, #7e57c2) bottom right / 3px 20px no-repeat;
+}
+
+.qr {
+  display: grid;
+  grid-template-columns: repeat(8, 23px);
+  grid-template-rows: repeat(8, 23px);
+}
+
+.qr__cell {
+  background: #160b3d;
+}
+
+.qr__cell.is-off {
+  background: transparent;
+}
+
+/* ---- Provenance chain (timeline) -------------------------------------- */
+
+.chain .timeline__item {
+  padding-bottom: 22px;
+}
+
+.chain .timeline__item::before {
+  top: 38px;
+  bottom: 4px;
+  background: linear-gradient(180deg, var(--accent-line), var(--ink-150));
+}
+
+.chain .timeline__label {
+  text-transform: none;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
+.chain .timeline__text {
+  color: var(--ink-800);
+}
+
+.chain .timeline__meta {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--ink-500);
+  background: var(--ink-50);
+  border: 1px solid var(--line);
+}
+
+/* ---- Carton stickers -------------------------------------------------- */
+
+.carton-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.carton-stats .stat__value {
+  font-size: var(--fs-3xl);
+  color: var(--accent);
+}
+
+.sticker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: #f7f0fb;
+  border: 1.5px dashed #ba68c8;
+}
+
+.mini-qr {
+  display: grid;
+  grid-template-columns: repeat(5, 11px);
+  grid-template-rows: repeat(5, 11px);
+  flex-shrink: 0;
+  padding: 6px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line-strong), var(--shadow-sm);
+}
+
+.mini-qr__cell {
+  background: #160b3d;
+}
+
+.mini-qr__cell.is-off {
+  background: transparent;
+}
+
+.sticker__info {
+  min-width: 0;
+}
+
+.sticker__id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.sticker__url {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-600);
+  overflow-wrap: anywhere;
+}
+
+.sticker__note {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--ink-500);
+}
+
+/* ---- EU buyer preview ------------------------------------------------- */
+
+.eu-preview {
+  padding: 20px;
+  border-radius: var(--r-lg);
+}
+
+.eu-preview .callout__title {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.eu-preview p {
+  padding-left: 14px;
+  line-height: 1.75;
+  border-left: 3px solid var(--tone-line);
+}
+
+/* ---- Responsive ------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .qr {
+    grid-template-columns: repeat(8, 19px);
+    grid-template-rows: repeat(8, 19px);
+  }
+
+  .qr-plate {
+    padding: 18px;
+  }
+
+  .carton-stats .stat__value {
+    font-size: var(--fs-2xl);
+  }
+}

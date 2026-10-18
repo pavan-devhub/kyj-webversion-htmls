@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Screen 12 — Packhouse Locator (Stage 3 · 1 of 2)
+   ========================================================================== */
+
+:root {
+  /* Map geometry (canvas is fixed 4:3, so % positions keep the line on the pins) */
+  --farm-x: 42%;
+  --farm-y: 54%;
+  --ph-x: 60%;
+  --ph-y: 29%;
+  --map-ratio: 4 / 3;
+  --line-w: 26%;
+  --line-angle: -46.2deg;
+  --radius-d: 68.4%;
+}
+
+/* ---- Map panel ----------------------------------------------------------- */
+
+.map-card {
+  box-shadow: var(--shadow-md);
+}
+
+.map {
+  position: relative;
+}
+
+.map__canvas {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: var(--map-ratio);
+  background:
+    radial-gradient(34% 28% at 16% 22%, rgba(165, 214, 167, 0.6), transparent 70%),
+    radial-gradient(28% 24% at 84% 80%, rgba(197, 225, 165, 0.75), transparent 70%),
+    radial-gradient(24% 20% at 88% 14%, rgba(255, 224, 178, 0.6), transparent 70%),
+    radial-gradient(22% 18% at 12% 86%, rgba(220, 237, 200, 0.9), transparent 70%),
+    linear-gradient(160deg, #e6f0d6 0%, #d7e8c5 55%, #cde1b8 100%);
+}
+
+/* River (curved) and highway — painted terrain, no extra markup */
+.map__canvas::before,
+.map__canvas::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.map__canvas::before {
+  width: 150%;
+  aspect-ratio: 1;
+  left: -92%;
+  top: 30%;
+  border-radius: 50%;
+  border: 12px solid rgba(144, 202, 249, 0.55);
+  box-shadow: 0 0 0 4px rgba(187, 222, 251, 0.35);
+}
+
+.map__canvas::after {
+  left: -10%;
+  right: -10%;
+  top: 76%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 1.5px rgba(120, 100, 60, 0.12);
+  transform: rotate(-9deg);
+}
+
+.map__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(46, 74, 34, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 74, 34, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* 50 km radius around the farm */
+.map__radius {
+  position: absolute;
+  z-index: 2;
+  left: var(--farm-x);
+  top: var(--farm-y);
+  width: var(--radius-d);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px dashed rgba(230, 81, 0, 0.45);
+  background: radial-gradient(circle, rgba(230, 81, 0, 0.1) 0%, rgba(230, 81, 0, 0.05) 60%, rgba(230, 81, 0, 0.02) 100%);
+  transform: translate(-50%, -50%);
+}
+
+/* Dashed route farm → packhouse */
+.map__line {
+  position: absolute;
+  z-index: 3;
+  left: var(--farm-x);
+  top: var(--farm-y);
+  width: var(--line-w);
+  height: 0;
+  border-top: 3px dashed var(--accent);
+  transform-origin: 0 50%;
+  transform: translateY(-50%) rotate(var(--line-angle));
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.9));
+}
+
+.map__pin {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.map__pin--farm {
+  left: var(--farm-x);
+  top: var(--farm-y);
+  border: 3px solid #2e7d32;
+  box-shadow: 0 0 0 8px rgba(46, 125, 50, 0.16), 0 12px 24px -10px rgba(27, 94, 32, 0.6);
+}
+
+.map__pin--ph {
+  left: var(--ph-x);
+  top: var(--ph-y);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 8px rgba(230, 81, 0, 0.16), 0 12px 24px -10px rgba(191, 54, 12, 0.6);
+  animation: ph-pulse 2.4s var(--ease-out) infinite;
+}
+
+@keyframes ph-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.35), 0 12px 24px -10px rgba(191, 54, 12, 0.6); }
+  70%  { box-shadow: 0 0 0 16px rgba(230, 81, 0, 0), 0 12px 24px -10px rgba(191, 54, 12, 0.6); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0), 0 12px 24px -10px rgba(191, 54, 12, 0.6); }
+}
+
+.map__dist {
+  position: absolute;
+  z-index: 5;
+  left: 51%;
+  top: 41.5%;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--accent-ink);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--accent-line);
+  box-shadow: 0 8px 18px -8px rgba(191, 54, 12, 0.55);
+  transform: translate(-50%, -50%);
+}
+
+.map__legend {
+  position: absolute;
+  z-index: 6;
+  left: 16px;
+  bottom: 16px;
+  max-width: calc(100% - 32px);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: var(--fs-xs);
+  font-weight: 550;
+  line-height: 1.5;
+  color: var(--ink-700);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* GPS strip under the map */
+.gps {
+  padding: 18px 20px 20px;
+  background: var(--tone-soft);
+  border-top: 1px solid var(--tone-line);
+}
+
+.gps__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gps .kv-cell__v {
+  font-size: var(--fs-sm);
+}
+
+.gps__measured {
+  background: linear-gradient(160deg, #e8f5e9, #fff 85%);
+  border-color: #81c784;
+}
+
+.gps__measured .kv-cell__v {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+}
+
+/* ---- Selected packhouse -------------------------------------------------- */
+
+.ph-card .card__strip {
+  padding: 18px 24px;
+}
+
+.ph-kv .kv__key {
+  align-items: center;
+}
+
+.ph-kv .kv__icon {
+  font-size: 17px;
+}
+
+.ph-kv .kv__row {
+  align-items: center;
+}
+
+.ph-kv .kv__val {
+  font-size: var(--fs-sm);
+}
+
+/* ---- Other packhouses ---------------------------------------------------- */
+
+.alt-card .kv__row {
+  align-items: center;
+  padding: 12px 0;
+  border-bottom-style: dashed;
+}
+
+.alt-card .kv__row:first-child {
+  padding-top: 0;
+}
+
+.alt-card .kv__row:last-child {
+  padding-bottom: 0;
+}
+
+.alt-name {
+  font-weight: 550;
+  color: var(--ink-700);
+}
+
+/* ---- Action bar with a single CTA --------------------------------------- */
+
+.action-bar--solo {
+  justify-content: flex-end;
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+
+/* Full-width map between breakpoints: a wider canvas, geometry recomputed */
+@media (max-width: 960px) and (min-width: 601px) {
+  :root {
+    --map-ratio: 16 / 10;
+    --line-w: 23.8%;
+    --line-angle: -41deg;
+    --radius-d: 62.7%;
+  }
+}
+
+@media (max-width: 600px) {
+  .map__pin {
+    width: 44px;
+    height: 44px;
+    font-size: 21px;
+  }
+
+  .map__dist {
+    padding: 4px 10px;
+    font-size: var(--fs-sm);
+  }
+
+  .map__legend {
+    position: static;
+    max-width: none;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    box-shadow: none;
+    padding: 10px 16px;
+  }
+
+  .gps__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   KYJ — main stylesheet (manifest)
+   Load order follows ITCSS: tokens → base → layout → components → utilities.
+   Page-specific styles live in pages/ and are mounted by their page with
+   <PageStyles> (src/components/PageStyles.jsx), after this file.
+   ========================================================================== */
+
+/* 1. Settings */
+@import url("base/tokens.css");
+
+/* 2. Base */
+@import url("base/reset.css");
+@import url("base/typography.css");
+
+/* 3. Layout */
+@import url("layout/app-shell.css");
+@import url("layout/page.css");
+@import url("layout/grid.css");
+
+/* 4. Components */
+@import url("components/card.css");
+@import url("components/button.css");
+@import url("components/badge.css");
+@import url("components/data-list.css");
+@import url("components/form.css");
+@import url("components/progress.css");
+@import url("components/stat.css");
+@import url("components/timeline.css");
+@import url("components/message.css");
+@import url("components/coins.css");
+@import url("components/medal.css");
+@import url("components/member-card.css");
+
+/* 5. Utilities (last, so they win) */
+@import url("utilities/tones.css");
+@import url("utilities/helpers.css");
+
+/* 6. Stage pages theme — scoped to the screen shell (.app), never the home page */
+@import url("stage/theme.css");

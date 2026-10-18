@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Screen 13 — Packing & Labelling (EX-08) · Stage 3 · 2 of 2
+   ========================================================================== */
+
+/* ---- Destination selector bar ------------------------------------------- */
+
+.dest-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding: 18px 24px;
+}
+
+.dest-bar .section-label {
+  margin-bottom: 0;
+}
+
+/* ---- Carton specification grid ------------------------------------------ */
+
+.spec-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.spec-grid .kv-cell {
+  background: var(--ink-50);
+  border-color: var(--ink-150);
+}
+
+.spec-grid .kv-cell__k {
+  color: var(--ink-500);
+}
+
+.spec-grid .kv-cell__v {
+  color: var(--ink-900);
+}
+
+.spec-grid .kv-cell.is-warn {
+  background: linear-gradient(160deg, var(--warning-soft), #fff 90%);
+  border-color: var(--warning-line);
+}
+
+.spec-grid .kv-cell.is-warn .kv-cell__v {
+  color: #e65100;
+}
+
+/* ---- BULLKART export label preview -------------------------------------- */
+
+.bk-label {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand  qr"
+    "name   qr"
+    "sub    qr"
+    "fields fields";
+  column-gap: 16px;
+  padding: 24px;
+  border-radius: var(--r-lg);
+  color: #fff;
+  background:
+    radial-gradient(260px 180px at 100% 0%, rgba(165, 214, 167, 0.22), transparent 70%),
+    linear-gradient(150deg, #0d3b12 0%, #1b5e20 55%, #2e7d32 100%);
+  box-shadow: 0 22px 44px -22px rgba(27, 94, 32, 0.75), var(--shadow-sm);
+}
+
+/* printed-label cut line */
+.bk-label::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: -1;
+  border-radius: 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+.bk-label__pattern {
+  position: absolute;
+  z-index: -1;
+  top: -46px;
+  right: -46px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 26px rgba(255, 255, 255, 0.035);
+}
+
+.bk-label__brand {
+  grid-area: brand;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.bk-label__name {
+  grid-area: name;
+  margin-top: 6px;
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.bk-label__sub {
+  grid-area: sub;
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bk-label__fields {
+  grid-area: fields;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.bk-label__field {
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bk-label__key {
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.bk-label__val {
+  margin-top: 2px;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+.bk-label__qr {
+  grid-area: qr;
+  align-self: start;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  font-size: 30px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 10px 20px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Compliance list ---------------------------------------------------- */
+
+.list__item.is-attention .list__title {
+  color: var(--warning-ink);
+}
+
+/* ---- Stage 3 gate ------------------------------------------------------- */
+
+.gate-tile {
+  background:
+    radial-gradient(220px 120px at 50% 0%, rgba(129, 199, 132, 0.35), transparent 70%),
+    var(--tone-soft);
+}
+
+.gate-tile .callout__title {
+  font-size: var(--fs-md);
+}
+
+.gate-tile__sub {
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--tone);
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+  .spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .spec-grid,
+  .bk-label__fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .spec-grid,
+  .bk-label__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bk-label {
+    padding: 20px;
+  }
+}
+
+/* ---- Desktop: interlock the two columns so no gap opens under the
+   carton spec card (the label preview spans rows 1–2). Source order —
+   and therefore the stacked mobile order — is unchanged. ------------- */
+@media (min-width: 961px) {
+  .pack-grid > :nth-child(1) { grid-column: 1 / span 7; grid-row: 1; }
+  .pack-grid > :nth-child(2) { grid-column: 8 / span 5; grid-row: 1 / span 2; }
+  .pack-grid > :nth-child(3) { grid-column: 1 / span 7; grid-row: 2 / span 2; }
+  .pack-grid > :nth-child(4) { grid-column: 8 / span 5; grid-row: 3; }
+}

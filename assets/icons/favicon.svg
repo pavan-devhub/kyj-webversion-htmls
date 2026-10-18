@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KYJ">
+  <defs>
+    <linearGradient id="kyj-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34a065"/>
+      <stop offset=".55" stop-color="#1d6b3e"/>
+      <stop offset="1" stop-color="#0c2e1b"/>
+    </linearGradient>
+    <linearGradient id="kyj-stem" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffe082"/>
+      <stop offset="1" stop-color="#fff8e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#kyj-bg)"/>
+  <circle cx="50" cy="12" r="14" fill="#fff" fill-opacity=".08"/>
+  <path d="M32 51V21" stroke="url(#kyj-stem)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 29c-7 0-11-5-11-11 7 0 11 5 11 11z" fill="#c8e6c9"/>
+  <path d="M32 29c7 0 11-5 11-11-7 0-11 5-11 11z" fill="#e8f5e9"/>
+  <path d="M32 40c-8 0-12-5-12-11 8 0 12 5 12 11z" fill="#81c784"/>
+  <path d="M32 40c8 0 12-5 12-11-8 0-12 5-12 11z" fill="#a5d6a7"/>
+  <circle cx="32" cy="14" r="4" fill="#ffd54f"/>
+  <path d="M19 51h26" stroke="#fff" stroke-opacity=".35" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

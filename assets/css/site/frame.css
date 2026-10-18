@@ -1,0 +1,129 @@
+/* ==========================================================================
+   FEED site frame — the FEED navbar and footer around the KYJ pages
+   navbar.css, notification-bell.css and footer.css are the FEED app's own
+   (src/components/*.css there), unchanged. This file makes them render as
+   they do in the FEED app, and fits the KYJ layout under the fixed navbar.
+   Load it after main.css and before those three.
+   ========================================================================== */
+
+/* ---- FEED's base styles, kept to the navbar and footer -------------------
+   The FEED app resets every element to no margin or padding and the Outfit
+   font, and its components were designed on that plus the browser defaults.
+   KYJ's own base styles (base/reset.css, base/typography.css) are rolled back
+   here. Specificity stays at zero, or one element, so every rule in the
+   FEED stylesheets still wins. */
+
+:where(.fw-services-overlay, .fw-nav-root, .fw-mobile-backdrop, .fw-mobile-panel, .new-footer) {
+  font-size: 16px;
+  line-height: normal;
+  color: CanvasText;
+  font-feature-settings: normal;
+  text-rendering: auto;
+}
+
+:where(.fw-services-overlay, .fw-nav-root, .fw-mobile-backdrop, .fw-mobile-panel, .new-footer),
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :is(h1, h2, h3, h4) {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :is(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: normal;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :is(strong, b) {
+  font-weight: bolder;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :is(img, svg) {
+  display: revert;
+  max-width: revert;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) a {
+  color: revert;
+  text-decoration: revert;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :is(button, input) {
+  font: revert;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  color: revert;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) button {
+  background: revert;
+  border: revert;
+  cursor: revert;
+}
+
+:where(.fw-nav-root, .fw-mobile-panel, .new-footer) :focus-visible {
+  outline: revert;
+  outline-offset: revert;
+  border-radius: revert;
+}
+
+/* ---- KYJ pages under the navbar ------------------------------------------ */
+
+.kyj-page {
+  /* The navbar is fixed 10px from the top and 68px tall; leave 10px clear below it. */
+  --kyj-nav-offset: 88px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Matches the navbar's own breakpoint, where it drops to 60px (navbar.css). */
+@media (max-width: 1200px) {
+  .kyj-page {
+    --kyj-nav-offset: 80px;
+  }
+}
+
+.kyj {
+  flex: 1 0 auto;
+}
+
+/* Screens: room for the navbar above the KYJ sidebar and top bar. */
+.kyj--screen {
+  padding-top: var(--kyj-nav-offset);
+}
+
+/* The navbar hides while scrolling down and comes back when scrolling up. While it shows,
+   the sticky KYJ top bar and sidebar stop just below it instead of sliding underneath. */
+.kyj .topbar,
+.kyj .sidebar {
+  transition: top 0.35s cubic-bezier(0.4, 0, 0.2, 1), height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kyj-page:has(.fw-nav-root:not(.fw-nav-hidden)) .kyj .topbar {
+  top: var(--kyj-nav-offset);
+}
+
+@media (min-width: 1101px) {
+  .kyj-page:has(.fw-nav-root:not(.fw-nav-hidden)) .kyj .sidebar {
+    top: var(--kyj-nav-offset);
+    height: calc(100vh - var(--kyj-nav-offset));
+  }
+}
+
+/* Below 1101px the KYJ sidebar is a slide-in drawer; it opens over the navbar. */
+@media (max-width: 1100px) {
+  .kyj .scrim {
+    z-index: 1001;
+  }
+
+  .kyj .sidebar {
+    z-index: 1002;
+  }
+}

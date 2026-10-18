@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Stage 0–8 journey (src/components/StageJourney.jsx)
+   A full-width, plain pale blue band. Each stage is a white panel on it: pill
+   label, two-tone title, summary, a row of same-size numbered screen cards,
+   then one button. Each card's number tile cycles through the same eight tints; the
+   stage's own colour marks its pill dot and the coloured word of its title.
+   Sizes are about 0.8 × the 1672 × 941 design's, where the panel is 1240px.
+   ========================================================================== */
+
+/* ol.journey, not .journey: the badge screens' steppers also carry a "journey" class */
+ol.journey {
+  --journey-ink: #0f1533;
+  --journey-pill-ink: #34426b;
+  --journey-text: #7a8196;
+  --journey-line: #ebebef;
+  --journey-band: #f1f7fd;
+  /* 1px when the band is 1360px wide (as in the design), shrinking with it.
+     The blue around each panel is N × --u. */
+  --u: clamp(0.35px, 100cqw / 1360, 1px);
+
+  display: grid;
+  /* 64 of blue between panels, and above the first and below the last */
+  gap: calc(64 * var(--u));
+  margin: 0;
+  padding: calc(64 * var(--u)) var(--gutter);
+  list-style: none;
+  background: var(--journey-band);
+}
+
+.journey__item {
+  justify-self: center;
+  width: min(100%, 1000px);
+}
+
+/* ---- Stage panel -------------------------------------------------------- */
+
+.journey-stage {
+  --stage-dot: #f09846;
+  --stage-ink: #286d7e;
+
+  position: relative;
+  container: journey-stage / inline-size;
+  padding: 30px 36px 34px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgb(30 70 140 / 0.08),
+    0 2px 4px rgb(20 50 110 / 0.04),
+    0 22px 44px -22px rgb(20 60 130 / 0.28);
+  text-align: center;
+  /* less the page's scroll-padding (topbar + 16px), so jumping to a stage
+     leaves just its 64 of blue above it in view */
+  scroll-margin-top: calc(64 * var(--u) - var(--topbar-h) - 16px);
+}
+
+.journey-stage[data-stage="0"] { --stage-dot: #f23552; --stage-ink: #a8193c; }
+.journey-stage[data-stage="1"] { --stage-dot: #8737f8; --stage-ink: #5b25c9; }
+.journey-stage[data-stage="2"] { --stage-dot: #2b67fe; --stage-ink: #0420e0; }
+.journey-stage[data-stage="3"] { --stage-dot: #10adfb; --stage-ink: #04689f; }
+.journey-stage[data-stage="4"] { --stage-dot: #04b18a; --stage-ink: #00745d; }
+.journey-stage[data-stage="5"] { --stage-dot: #62c40a; --stage-ink: #2a7a0b; }
+.journey-stage[data-stage="6"] { --stage-dot: #fd9d06; --stage-ink: #a35a00; }
+.journey-stage[data-stage="7"] { --stage-dot: #fb8318; --stage-ink: #b9440a; }
+.journey-stage[data-stage="8"] { --stage-dot: #5a6b8c; --stage-ink: #4b5c7e; }
+
+/* ---- Header ------------------------------------------------------------- */
+
+.journey-stage__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 30px;
+  margin: 0;
+  /* the right side loses the trailing letter-spacing */
+  padding: 0 calc(16px - 0.16em) 0 16px;
+  border: 1px solid #eceff7;
+  border-radius: var(--r-pill);
+  background: #fff;
+  box-shadow:
+    0 1px 2px rgb(16 24 64 / 0.05),
+    0 8px 18px -8px color-mix(in srgb, var(--stage-dot) 40%, transparent);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--journey-pill-ink);
+}
+
+.journey-stage__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stage-dot);
+}
+
+.journey-stage__title {
+  margin: 6px 0 0;
+  font-family: var(--font-sans);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--journey-ink);
+  text-wrap: balance;
+}
+
+.journey-stage__accent {
+  color: var(--stage-ink);
+}
+
+.journey-stage__summary {
+  max-width: 340px;
+  margin: 8px auto 0;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.36;
+  color: var(--journey-text);
+  text-wrap: balance;
+}
+
+/* ---- Screen cards ------------------------------------------------------- */
+/* Every card is the same width (--card-w) so all stages line up. Cards wrap
+   and centre; --cols is the narrower of what fits (--fit, from the stage
+   width) and what keeps rows balanced (--max-cols, from the card count). The
+   row is capped at --cols cards wide, so five cards wrap 3 + 2, not 4 + 1. */
+
+.journey-stage__cards {
+  --card-w: 220px;
+  --fit: 1;
+  --max-cols: 4;
+  --cols: min(var(--fit), var(--max-cols));
+  --gap: 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+  max-width: calc(var(--cols) * var(--card-w) + (var(--cols) - 1) * var(--gap));
+  margin: 26px auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.journey-stage__cards[data-count="1"] { --max-cols: 1; }
+.journey-stage__cards[data-count="2"] { --max-cols: 2; }
+.journey-stage__cards[data-count="3"],
+.journey-stage__cards[data-count="5"],
+.journey-stage__cards[data-count="6"] { --max-cols: 3; }
+
+@container journey-stage (min-width: 400px) {
+  .journey-stage__cards { --fit: 2; }
+}
+
+@container journey-stage (min-width: 640px) {
+  .journey-stage__cards { --fit: 3; }
+  /* four cards: 2 + 2 rather than 3 + 1 until all four fit */
+  .journey-stage__cards[data-count="4"] { --fit: 2; }
+}
+
+@container journey-stage (min-width: 860px) {
+  .journey-stage__cards,
+  .journey-stage__cards[data-count="4"] { --fit: 4; }
+}
+
+.journey-card {
+  display: flex;
+  flex: 0 1 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+  min-width: 0;
+  max-width: var(--card-w);
+}
+
+/* Number tile tints, repeating every eight cards */
+.journey-card { --tile-bg: #e0e1fc; --tile-ink: #3d36d4; }
+.journey-card:nth-child(8n + 2) { --tile-bg: #d8f5eb; --tile-ink: #0aa891; }
+.journey-card:nth-child(8n + 3) { --tile-bg: #fde2e2; --tile-ink: #de2131; }
+.journey-card:nth-child(8n + 4) { --tile-bg: #feecbe; --tile-ink: #b07c0b; }
+.journey-card:nth-child(8n + 5) { --tile-bg: #ece3fb; --tile-ink: #7a3fd0; }
+.journey-card:nth-child(8n + 6) { --tile-bg: #d9eefb; --tile-ink: #0a7fbf; }
+.journey-card:nth-child(8n + 7) { --tile-bg: #fce1f0; --tile-ink: #c02b86; }
+.journey-card:nth-child(8n + 8) { --tile-bg: #e3f3d6; --tile-ink: #4a8a12; }
+
+.journey-card__link {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  padding: 12px 14px 12px 16px;
+  border: 1px solid var(--journey-line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px rgb(16 24 64 / 0.04),
+    0 8px 16px -10px rgb(20 50 110 / 0.18);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+
+.journey-card__num {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--tile-bg);
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--tile-ink);
+}
+
+.journey-card__title {
+  min-width: 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: var(--journey-ink);
+  overflow-wrap: break-word;
+}
+
+@media (hover: hover) {
+  .journey-card__link:hover {
+    border-color: color-mix(in srgb, var(--tile-ink) 22%, #fff);
+    box-shadow:
+      0 1px 2px rgb(16 24 64 / 0.04),
+      0 18px 30px -18px rgb(20 50 110 / 0.35);
+    transform: translateY(-2px);
+  }
+}
+
+.journey-card__link:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.journey-card__link:focus-visible {
+  outline: 2px solid var(--journey-ink);
+  outline-offset: 3px;
+}
+
+/* ---- Button ------------------------------------------------------------- */
+
+.journey-stage__actions {
+  margin-top: 22px;
+}
+
+.journey-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(105deg, #ef5a2c 0%, #f5802a 50%, #fba716 100%);
+  box-shadow: 0 14px 26px -12px rgb(240 110 40 / 0.6);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    box-shadow var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .journey-btn:hover {
+    box-shadow: 0 20px 34px -12px rgb(240 110 40 / 0.7);
+    transform: translateY(-1px);
+  }
+}
+
+.journey-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.journey-btn:focus-visible {
+  outline: 2px solid var(--journey-ink);
+  outline-offset: 3px;
+}
+
+/* ---- Narrow ------------------------------------------------------------- */
+
+@container journey-stage (max-width: 639px) {
+  .journey-stage__title {
+    font-size: 38px;
+  }
+}
+
+@container journey-stage (max-width: 399px) {
+  .journey-stage__pill {
+    height: 28px;
+    padding: 0 calc(14px - 0.14em) 0 14px;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+  }
+
+  .journey-stage__title {
+    margin-top: 8px;
+    font-size: 30px;
+  }
+
+  .journey-stage__summary {
+    font-size: 14.5px;
+  }
+
+  .journey-stage__cards {
+    --gap: 10px;
+
+    max-width: none;
+    margin-top: 22px;
+  }
+
+  .journey-card {
+    max-width: none;
+  }
+
+  .journey-card__link {
+    gap: 12px;
+    min-height: 64px;
+    padding: 11px 14px;
+    border-radius: 11px;
+  }
+
+  .journey-card__num {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    font-size: 17px;
+  }
+
+  .journey-card__title {
+    font-size: 14.5px;
+    line-height: 20px;
+  }
+
+  .journey-stage__actions {
+    margin-top: 20px;
+  }
+
+  .journey-btn {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    font-size: 16px;
+  }
+}
+
+/* The panel is its own container, so its padding follows the viewport */
+@media (max-width: 640px) {
+  .journey-stage {
+    padding: 24px 16px 22px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-card__link,
+  .journey-btn {
+    transition: none;
+  }
+
+  .journey-card__link:hover,
+  .journey-card__link:active,
+  .journey-btn:hover,
+  .journey-btn:active {
+    transform: none;
+  }
+}

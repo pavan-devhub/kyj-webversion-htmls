@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Data display — key/value rows, key/value grid, rich list, table
+   ========================================================================== */
+
+/* ---- Key / value rows -------------------------------------------------- */
+
+.kv {
+  display: flex;
+  flex-direction: column;
+}
+
+.kv__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  font-size: var(--fs-sm);
+  border-bottom: 1px solid var(--line);
+}
+
+.kv__row:first-child {
+  padding-top: 0;
+}
+
+.kv__row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.kv__key {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--ink-500);
+  min-width: 0;
+}
+
+.kv__icon {
+  width: 22px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.kv__val {
+  font-weight: 650;
+  text-align: right;
+  color: var(--ink-900);
+}
+
+.kv__val.is-ok   { color: var(--success-ink); }
+.kv__val.is-warn { color: var(--warning-ink); }
+.kv__val.is-bad  { color: var(--danger-ink); }
+.kv__val.is-info { color: var(--info-ink); }
+.kv__val.is-tone { color: var(--tone-ink); }
+
+.card--tinted .kv__row {
+  border-color: color-mix(in srgb, var(--tone-line) 70%, transparent);
+}
+
+.card--tinted .kv__key {
+  color: var(--ink-600);
+}
+
+.kv__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1.5px dashed var(--tone-line);
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+/* ---- Key / value grid (boxed cells) ----------------------------------- */
+
+.kv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.kv-cell {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--tone-line);
+}
+
+.kv-cell__k {
+  font-size: var(--fs-2xs);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+
+.kv-cell__v {
+  margin-top: 4px;
+  font-size: var(--fs-base);
+  font-weight: 650;
+  color: var(--tone-ink);
+}
+
+/* ---- Rich list --------------------------------------------------------- */
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.list__item:first-child {
+  padding-top: 0;
+}
+
+.list__item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Inside flush cards the list carries its own horizontal padding */
+.card--flush .list__item {
+  padding: 14px 24px;
+}
+
+.card--flush .list__item:first-child {
+  padding-top: 14px;
+}
+
+.card--flush .list__item:last-child {
+  padding-bottom: 16px;
+}
+
+.list__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 19px;
+  color: var(--tone-ink);
+  background: var(--tone-soft);
+}
+
+.list__icon--sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.list__icon--solid {
+  color: #fff;
+  background: var(--tone);
+}
+
+.list__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.list__title {
+  font-size: var(--fs-base);
+  font-weight: 650;
+  line-height: 1.45;
+  color: var(--ink-900);
+}
+
+.list__meta {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+  color: var(--ink-500);
+}
+
+.list__aside {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-align: right;
+  color: var(--tone-ink);
+}
+
+/* Group header inside a flush list */
+.list__group {
+  padding: 10px 24px;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  background: var(--ink-50);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.list__group:first-child {
+  border-top: 0;
+}
+
+/* ---- Table --------------------------------------------------------------- */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.table th {
+  padding: 10px 14px;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--ink-500);
+  background: var(--ink-50);
+  border-bottom: 1px solid var(--line);
+}
+
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Tone modifiers
+   Any component that reads --tone / --tone-ink / --tone-soft / --tone-line
+   (callout, tag, section-label, stat, list icon, card--tinted …) can be
+   recoloured with a single .tone-* class. Without a tone class, components
+   fall back to the page accent.
+   ========================================================================== */
+
+:root {
+  --tone: var(--accent);
+  --tone-ink: var(--accent-ink);
+  --tone-soft: var(--accent-soft);
+  --tone-line: var(--accent-line);
+}
+
+.tone-accent { --tone: var(--accent);  --tone-ink: var(--accent-ink); --tone-soft: var(--accent-soft); --tone-line: var(--accent-line); }
+.tone-green  { --tone: #2e7d32; --tone-ink: #1b5e20; --tone-soft: #eef7ef; --tone-line: #c8e6c9; }
+.tone-blue   { --tone: #1565c0; --tone-ink: #0d47a1; --tone-soft: #eef5fd; --tone-line: #c6dcf5; }
+.tone-orange { --tone: #ef6c00; --tone-ink: #bf360c; --tone-soft: #fff4e9; --tone-line: #ffd6ad; }
+.tone-gold   { --tone: #f59e0b; --tone-ink: #a64b00; --tone-soft: #fff8e6; --tone-line: #fbe3a0; }
+.tone-purple { --tone: #7b1fa2; --tone-ink: #4a148c; --tone-soft: #f7f0fb; --tone-line: #e5c8ef; }
+.tone-red    { --tone: #c62828; --tone-ink: #b71c1c; --tone-soft: #fdf1f1; --tone-line: #f6c7c7; }
+.tone-teal   { --tone: #00897b; --tone-ink: #004d40; --tone-soft: #ebf7f5; --tone-line: #b5e0da; }
+.tone-cyan   { --tone: #00838f; --tone-ink: #006064; --tone-soft: #eaf7f8; --tone-line: #b2e3e7; }
+.tone-indigo { --tone: #3949ab; --tone-ink: #1a237e; --tone-soft: #eff1fb; --tone-line: #cdd2f0; }
+.tone-navy   { --tone: #1a237e; --tone-ink: #0d2147; --tone-soft: #eef0f7; --tone-line: #c9cfe3; }
+.tone-slate  { --tone: #546e7a; --tone-ink: #263238; --tone-soft: #f2f5f6; --tone-line: #d5dde1; }
+.tone-brown  { --tone: #6d4c41; --tone-ink: #4e342e; --tone-soft: #f7f1ee; --tone-line: #dfd1cb; }
+.tone-neutral{ --tone: #6f7772; --tone-ink: #3a413d; --tone-soft: #f6f6f2; --tone-line: #e3e6e1; }
